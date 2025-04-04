@@ -1,12 +1,21 @@
 <!DOCTYPE codename-engine-character>
 <character y="350" sprite="bf" flipX="true" isPlayer="true" icon="bf" color="#24D2FF">
-	<anim name="idle" anim="idle" x="0" y="0" fps="24" loop="false"/>
-	<anim name="singUP" anim="up" x="-20" y="0" fps="24" loop="false"/>
-	<anim name="singLEFT" anim="left" x="-5" y="-3" fps="24" loop="false"/>
-	<anim name="singRIGHT" anim="right" x="-60" y="3" fps="24" loop="false"/>
-	<anim name="singDOWN" anim="down" x="-22" y="-14" fps="24" loop="false"/>
-	<anim name="singUPmiss" anim="MISS up" x="-20" y="4" fps="24" loop="false"/>
-	<anim name="singLEFTmiss" anim="MISS left" x="-5" y="1" fps="24" loop="false"/>
-	<anim name="singRIGHTmiss" anim="MISS right" x="-57" y="4" fps="24" loop="false"/>
-	<anim name="singDOWNmiss" anim="MISS down" x="-22" y="-4" fps="24" loop="false"/>
+	<anim name="idle" anim="idle" x="0" y="0" fps="12" loop="false"/>
+	<anim name="singUP" anim="up" x="-20" y="0" fps="12" loop="false"/>
+	<anim name="singLEFT" anim="left" x="-5" y="-3" fps="12" loop="false"/>
+	<anim name="singRIGHT" anim="right" x="-60" y="3" fps="12" loop="false"/>
+	<anim name="singDOWN" anim="down" x="-22" y="-14" fps="12" loop="false"/>
+	<anim name="singUPmiss" anim="MISS up" x="-20" y="4" fps="12" loop="false"/>
+	<anim name="singLEFTmiss" anim="MISS left" x="-5" y="1" fps="12" loop="false"/>
+	<anim name="singRIGHTmiss" anim="MISS right" x="-57" y="4" fps="12" loop="false"/>
+	<anim name="singDOWNmiss" anim="MISS down" x="-22" y="-4" fps="12" loop="false"/>
+	<anim name="idle-loop" anim="idle" x="0" y="0" fps="12" loop="true" indices="6"/>
+	<anim name="singUP-loop" anim="up" x="-20" y="0" fps="12" loop="true" indices="1"/>
+	<anim name="singLEFT-loop" anim="left" x="-5" y="-3" fps="12" loop="true" indices="1"/>
+	<anim name="singRIGHT-loop" anim="right" x="-60" y="3" fps="12" loop="true" indices="1"/>
+	<anim name="singDOWN-loop" anim="down" x="-22" y="-14" fps="12" loop="true" indices="1"/>
+	<anim name="singUPmiss-loop" anim="MISS up" x="-20" y="4" fps="12" loop="true" indices="1,2"/>
+	<anim name="singLEFTmiss-loop" anim="MISS left" x="-5" y="1" fps="12" loop="true" indices="1,2"/>
+	<anim name="singRIGHTmiss-loop" anim="MISS right" x="-57" y="4" fps="12" loop="true" indices="1,2"/>
+	<anim name="singDOWNmiss-loop" anim="MISS down" x="-22" y="-4" fps="12" loop="true" indices="1,2"/>
 </character>
