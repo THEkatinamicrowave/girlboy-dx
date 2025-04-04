@@ -7,8 +7,6 @@
 	<SubTexture name="idle0002" x="1766" y="449" width="363" height="429" frameX="-12" frameY="-9" frameWidth="375" frameHeight="438"/>
 	<SubTexture name="idle0003" x="2129" y="449" width="355" height="438" frameX="-16" frameY="0" frameWidth="375" frameHeight="438"/>
 	<SubTexture name="idle0004" x="2484" y="449" width="347" height="438" frameX="-23" frameY="0" frameWidth="375" frameHeight="438"/>
-	<SubTexture name="idle0005" x="2484" y="449" width="347" height="438" frameX="-23" frameY="0" frameWidth="375" frameHeight="438"/>
-	<SubTexture name="idle0006" x="2484" y="449" width="347" height="438" frameX="-23" frameY="0" frameWidth="375" frameHeight="438"/>
 	<SubTexture name="left0000" x="2831" y="449" width="353" height="435" frameX="0" frameY="-1" frameWidth="358" frameHeight="436"/>
 	<SubTexture name="left0001" x="3184" y="449" width="346" height="436" frameX="-12" frameY="0" frameWidth="358" frameHeight="436"/>
 	<SubTexture name="down0000" x="348" y="449" width="351" height="418" frameX="0" frameY="-6" frameWidth="351" frameHeight="424"/>
