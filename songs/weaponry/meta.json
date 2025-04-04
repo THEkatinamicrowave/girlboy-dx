@@ -1,0 +1,18 @@
+{
+	"beatsPerMeasure": 4,
+	"opponentModeAllowed": true,
+	"coopAllowed": true,
+	"stepsPerBeat": 4,
+	"bpm": 140,
+	"difficulties": [
+		"NORMAL",
+		"DX"
+	],
+	"needsVoices": true,
+	"parsedColor": -7179779,
+	"displayName": "Weaponry",
+	"icon": "girlboy",
+	"name": "weaponry",
+	"color": "#0C4CB0",
+	"customValues": {}
+}

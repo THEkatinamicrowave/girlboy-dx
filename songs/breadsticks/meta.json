@@ -1,0 +1,18 @@
+{
+	"beatsPerMeasure": 4,
+	"opponentModeAllowed": true,
+	"coopAllowed": true,
+	"stepsPerBeat": 4,
+	"bpm": 200,
+	"difficulties": [
+		"NORMAL",
+		"DX"
+	],
+	"needsVoices": true,
+	"parsedColor": -7179779,
+	"displayName": "Breadsticks",
+	"icon": "cat",
+	"name": "breadsticks",
+	"color": "#171826",
+	"customValues": {}
+}
