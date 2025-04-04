@@ -4,6 +4,6 @@
     <spr name="bg" sprite="bg" x="-891" y="-548" scroll="1" />
     <spr name="bed" sprite="bed" x="-223" y="655" scroll="1" />
 
-    <dad x="50" y="480" scroll="1.05" />
-    <boyfriend x="802" y="400" scroll="1.05" />
+    <dad x="252" y="200" scroll="1.05" />
+    <boyfriend x="752" y="200" scroll="1.05" />
 </stage>

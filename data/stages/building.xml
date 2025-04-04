@@ -4,6 +4,6 @@
     <spr name="buildings" sprite="buildings" x="-462" y="40" scroll="0.85" />
     <spr name="roof" sprite="roof" x="-277" y="527" scroll="1" />
 
-    <boyfriend x="770" y="100" scroll="1" />
-    <dad x="100" y="100" scroll="1" />
+    <boyfriend x="800" y="0" scroll="1" />
+    <dad x="100" y="0" scroll="1" />
 </stage>
