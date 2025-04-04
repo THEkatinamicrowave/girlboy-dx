@@ -1,7 +1,0 @@
-<!DOCTYPE codename-engine-stage>
-<stage name="weaponry" folder="stages/weaponry/" zoom="0.7">
-    <spr name="bg" sprite="bg" x="-1657" y="-2060" scroll="1" />
-
-    <dad x="-70" y="490" scroll="1" />
-    <boyfriend x="950" y="473" scroll="1" />
-</stage>
