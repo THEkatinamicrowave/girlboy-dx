@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="weaponry.png">
+	<!-- Created with Adobe Animate version 21.0.6.41649 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="egghigh0000" x="0" y="0" width="605" height="915"/>
+	<SubTexture name="egghigh0001" x="0" y="0" width="605" height="915"/>
+	<SubTexture name="egghigh0002" x="605" y="0" width="605" height="915"/>
+	<SubTexture name="egghigh0003" x="605" y="0" width="605" height="915"/>
+	<SubTexture name="eggidle0000" x="1210" y="0" width="592" height="897"/>
+	<SubTexture name="eggselect0000" x="0" y="915" width="592" height="897"/>
+	<SubTexture name="eggselect0001" x="0" y="915" width="592" height="897"/>
+	<SubTexture name="eggselect0002" x="1210" y="0" width="592" height="897"/>
+	<SubTexture name="eggselect0003" x="1210" y="0" width="592" height="897"/>
+</TextureAtlas>

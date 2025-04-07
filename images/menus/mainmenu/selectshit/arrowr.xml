@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="arrowr.png">
+	<!-- Created with Adobe Animate version 21.0.6.41649 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="moverarrow0000" x="0" y="0" width="130" height="279"/>
+	<SubTexture name="moverarrow0001" x="130" y="0" width="130" height="279"/>
+	<SubTexture name="moverarrow0002" x="260" y="0" width="130" height="279"/>
+	<SubTexture name="moverarrow0003" x="390" y="0" width="130" height="279"/>
+	<SubTexture name="moverarrow0004" x="520" y="0" width="130" height="279"/>
+	<SubTexture name="moverarrow0005" x="650" y="0" width="130" height="279"/>
+	<SubTexture name="moverarrow0006" x="780" y="0" width="130" height="279"/>
+	<SubTexture name="moverarrow0007" x="0" y="279" width="130" height="279"/>
+	<SubTexture name="moverarrow0008" x="130" y="279" width="130" height="279"/>
+	<SubTexture name="moverarrow0009" x="260" y="279" width="130" height="279"/>
+	<SubTexture name="rarrow0000" x="390" y="279" width="130" height="279"/>
+</TextureAtlas>
