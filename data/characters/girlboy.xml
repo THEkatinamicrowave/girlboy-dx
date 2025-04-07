@@ -1,8 +1,13 @@
 <!DOCTYPE codename-engine-character>
 <character y="350" sprite="girlboy" icon="girlboy" color="#0F6CDF">
-	<anim name="idle" anim="idle" x="0" y="0" fps="24" loop="false"/>
-	<anim name="singUP" anim="up" x="7" y="1" fps="24" loop="false"/>
-	<anim name="singLEFT" anim="left" x="15" y="2" fps="24" loop="false"/>
-	<anim name="singRIGHT" anim="right" x="2" y="-8" fps="24" loop="false"/>
-	<anim name="singDOWN" anim="down" x="11" y="-22" fps="24" loop="false"/>
+	<anim name="idle" anim="idle" x="0" y="0" fps="12" loop="false"/>
+	<anim name="singUP" anim="up" x="7" y="1" fps="12" loop="false"/>
+	<anim name="singLEFT" anim="left" x="15" y="2" fps="12" loop="false"/>
+	<anim name="singRIGHT" anim="right" x="2" y="-8" fps="12" loop="false"/>
+	<anim name="singDOWN" anim="down" x="11" y="-22" fps="12" loop="false"/>
+	<anim name="idle-loop" anim="idle" x="0" y="0" fps="12" loop="true" indices="4"/>
+	<anim name="singUP-loop" anim="up" x="7" y="1" fps="12" loop="true" indices="1"/>
+	<anim name="singLEFT-loop" anim="left" x="15" y="2" fps="12" loop="true" indices="1"/>
+	<anim name="singRIGHT-loop" anim="right" x="2" y="-8" fps="12" loop="true" indices="1"/>
+	<anim name="singDOWN-loop" anim="down" x="11" y="-22" fps="12" loop="true" indices="1"/>
 </character>
