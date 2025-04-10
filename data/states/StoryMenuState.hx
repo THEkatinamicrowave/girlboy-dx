@@ -2,9 +2,13 @@
 //
 var path:String = "menus/storymenu/";
 var shitpath:String = path + "selectshit/";
+var weekpath:String = path + "weeks/";
 
 var sky:FlxSprite;
 var bg:FlxSprite;
+
+var song1egg:FlxSprite;
+var song2building:FlxSprite;
 
 var arrowl:FlxSprite;
 var arrowr:FlxSprite;
@@ -12,7 +16,8 @@ var arrowr:FlxSprite;
 var placeholdersongname:FunkinText;
 
 function postCreate() {
-    FlxG.camera.scroll.y = -100;
+    FlxG.mouse.visible = true;
+    FlxG.camera.scroll.set(0, -100);
 
     remove(characterSprites);
     remove(weekSprites);
@@ -24,15 +29,35 @@ function postCreate() {
     sky.scale.set(0.7, 0.7);
     sky.updateHitbox();
     sky.antialiasing = true;
-    sky.setPosition(0, -30);
     add(sky);
 
     bg = new FlxSprite().loadGraphic(Paths.image(path + "selectbg"));
     bg.scale.set(0.7, 0.7);
     bg.updateHitbox();
     bg.antialiasing = true;
-    bg.setPosition(-780, -660);
     add(bg);
+
+    song1egg = new FlxSprite().loadGraphic(Paths.image(weekpath + "weaponry"));
+    song1egg.frames = Paths.getFrames(weekpath + "weaponry");
+    song1egg.animation.addByPrefix("idle", "idle");
+    song1egg.animation.addByPrefix("high", "high", 24);
+    song1egg.animation.addByPrefix("select", "select", 24);
+    song1egg.animation.play("idle");
+    song1egg.scale.set(0.7, 0.7);
+    song1egg.updateHitbox();
+    song1egg.antialiasing = true;
+    add(song1egg);
+
+    song2building = new FlxSprite().loadGraphic(Paths.image(weekpath + "breadsticks"));
+    song2building.frames = Paths.getFrames(weekpath + "breadsticks");
+    song2building.animation.addByPrefix("idle", "idle");
+    song2building.animation.addByPrefix("high", "high", 24);
+    song2building.animation.addByPrefix("select", "select", 24);
+    song2building.animation.play("idle");
+    song2building.scale.set(0.7, 0.7);
+    song2building.updateHitbox();
+    song2building.antialiasing = true;
+    insert(members.indexOf(bg), song2building);
 
     arrowl = new FlxSprite().loadGraphic(Paths.image(shitpath + "arrowl"));
 	arrowr = new FlxSprite().loadGraphic(Paths.image(shitpath + "arrowr"));
@@ -61,6 +86,29 @@ function postCreate() {
 
     changeWeek(0, true);
     changeDifficulty(0, true);
+}
+
+function postUpdate(elapsed:Float) {
+    sky.setPosition(
+        0 - (FlxG.mouse.x - FlxG.width/2)/5,
+        -30 - (FlxG.mouse.y - FlxG.height/2)/5
+    );
+    bg.setPosition(
+        -780 - (FlxG.mouse.x - FlxG.width/2)/5,
+        -660 - (FlxG.mouse.y - FlxG.height/2)/5
+    );
+    song1egg.setPosition(
+        -220 - (FlxG.mouse.x - FlxG.width/2)/4,
+        200 - (FlxG.mouse.y - FlxG.height/2)/4
+    );
+    song2building.setPosition(
+        65 - (FlxG.mouse.x - FlxG.width/2)/6,
+        100 - (FlxG.mouse.y - FlxG.height/2)/6
+    );
+}
+
+function onGoBack(event:CancellableEvent) {
+    FlxG.mouse.visible = false;
 }
 
 function onChangeDifficulty(event:MenuChangeEvent) {
