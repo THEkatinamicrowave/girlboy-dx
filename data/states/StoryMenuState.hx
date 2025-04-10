@@ -12,6 +12,8 @@ var arrowr:FlxSprite;
 var placeholdersongname:FunkinText;
 
 function postCreate() {
+    FlxG.camera.scroll.y = -100;
+
     remove(characterSprites);
     remove(weekSprites);
     for(e in [blackBar, scoreText, weekTitle, weekBG, tracklist]) {
@@ -22,14 +24,14 @@ function postCreate() {
     sky.scale.set(0.7, 0.7);
     sky.updateHitbox();
     sky.antialiasing = true;
-    sky.setPosition(0, 70);
+    sky.setPosition(0, -30);
     add(sky);
 
     bg = new FlxSprite().loadGraphic(Paths.image(path + "selectbg"));
     bg.scale.set(0.7, 0.7);
     bg.updateHitbox();
     bg.antialiasing = true;
-    bg.setPosition(-780, -560);
+    bg.setPosition(-780, -660);
     add(bg);
 
     arrowl = new FlxSprite().loadGraphic(Paths.image(shitpath + "arrowl"));
@@ -56,14 +58,16 @@ function postCreate() {
     
     placeholdersongname = new FunkinText(0, 0, FlxG.width, "RAAAH", 48);
     placeholdersongname.alignment = "center";
-    add(placeholdersongname);
 
     changeWeek(0, true);
+    changeDifficulty(0, true);
 }
 
 function onChangeDifficulty(event:MenuChangeEvent) {
-    if (arrowl != null) arrowl.x = difficultySprites[weeks[curWeek].difficulties[curDifficulty].toLowerCase()].x - arrowl.width + 50;
-    if (arrowr != null) arrowr.x = difficultySprites[weeks[curWeek].difficulties[curDifficulty].toLowerCase()].x + difficultySprites[weeks[curWeek].difficulties[curDifficulty].toLowerCase()].width - 50;
+    for (e in difficultySprites) {
+        e.y = leftArrow.y;
+        e.scrollFactor.y = 1;
+    }
 
     switch event.change {
         default:
@@ -78,5 +82,5 @@ function onChangeDifficulty(event:MenuChangeEvent) {
 }
 
 function onChangeWeek(event:MenuChangeEvent) {
-	if (placeholdersongname != null) placeholdersongname.text = weeks[event.value].name;
+
 }
