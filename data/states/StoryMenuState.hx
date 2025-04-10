@@ -13,8 +13,6 @@ var song2building:FlxSprite;
 var arrowl:FlxSprite;
 var arrowr:FlxSprite;
 
-var placeholdersongname:FunkinText;
-
 function postCreate() {
     FlxG.camera.scroll.set(0, -100);
 
@@ -83,9 +81,6 @@ function postCreate() {
 
     arrowl.y = 450;
     arrowr.y = 450;
-    
-    placeholdersongname = new FunkinText(0, 0, FlxG.width, "RAAAH", 48);
-    placeholdersongname.alignment = "center";
 
     changeWeek(0, true);
     changeDifficulty(0, true);
