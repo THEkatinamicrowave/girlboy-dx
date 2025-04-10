@@ -16,46 +16,49 @@ var arrowr:FlxSprite;
 var placeholdersongname:FunkinText;
 
 function postCreate() {
-    FlxG.mouse.visible = true;
     FlxG.camera.scroll.set(0, -100);
 
     remove(characterSprites);
     remove(weekSprites);
-    for(e in [blackBar, scoreText, weekTitle, weekBG, tracklist]) {
+    for(e in [blackBar, scoreText, weekTitle, weekBG, tracklist, leftArrow, rightArrow]) {
         remove(e);
     }
 
     sky = new FlxSprite().loadGraphic(Paths.image(path + "sky"));
     sky.scale.set(0.7, 0.7);
     sky.updateHitbox();
+    sky.setPosition(0, -30);
     sky.antialiasing = true;
     add(sky);
 
     bg = new FlxSprite().loadGraphic(Paths.image(path + "selectbg"));
     bg.scale.set(0.7, 0.7);
     bg.updateHitbox();
+    bg.setPosition(-780, -660);
     bg.antialiasing = true;
     add(bg);
 
     song1egg = new FlxSprite().loadGraphic(Paths.image(weekpath + "weaponry"));
     song1egg.frames = Paths.getFrames(weekpath + "weaponry");
     song1egg.animation.addByPrefix("idle", "idle");
-    song1egg.animation.addByPrefix("high", "high", 24);
+    song1egg.animation.addByPrefix("high", "high", 12);
     song1egg.animation.addByPrefix("select", "select", 24);
     song1egg.animation.play("idle");
     song1egg.scale.set(0.7, 0.7);
     song1egg.updateHitbox();
+    song1egg.setPosition(-220, 200);
     song1egg.antialiasing = true;
     add(song1egg);
 
     song2building = new FlxSprite().loadGraphic(Paths.image(weekpath + "breadsticks"));
     song2building.frames = Paths.getFrames(weekpath + "breadsticks");
     song2building.animation.addByPrefix("idle", "idle");
-    song2building.animation.addByPrefix("high", "high", 24);
+    song2building.animation.addByPrefix("high", "high", 12);
     song2building.animation.addByPrefix("select", "select", 24);
     song2building.animation.play("idle");
     song2building.scale.set(0.7, 0.7);
     song2building.updateHitbox();
+    song2building.setPosition(65, 100);
     song2building.antialiasing = true;
     insert(members.indexOf(bg), song2building);
 
@@ -89,26 +92,18 @@ function postCreate() {
 }
 
 function postUpdate(elapsed:Float) {
-    sky.setPosition(
-        0 - (FlxG.mouse.x - FlxG.width/2)/5,
-        -30 - (FlxG.mouse.y - FlxG.height/2)/5
-    );
-    bg.setPosition(
-        -780 - (FlxG.mouse.x - FlxG.width/2)/5,
-        -660 - (FlxG.mouse.y - FlxG.height/2)/5
-    );
-    song1egg.setPosition(
-        -220 - (FlxG.mouse.x - FlxG.width/2)/4,
-        200 - (FlxG.mouse.y - FlxG.height/2)/4
-    );
-    song2building.setPosition(
-        65 - (FlxG.mouse.x - FlxG.width/2)/6,
-        100 - (FlxG.mouse.y - FlxG.height/2)/6
-    );
-}
-
-function onGoBack(event:CancellableEvent) {
-    FlxG.mouse.visible = false;
+    switch curWeek {
+        case 0:
+            sky.setPosition(CoolUtil.fpsLerp(sky.x, 127.2, 0.08), CoolUtil.fpsLerp(sky.y, -80, 0.08));
+            bg.setPosition(CoolUtil.fpsLerp(bg.x, -653, 0.08), CoolUtil.fpsLerp(bg.y, -709.6, 0.08));
+            song1egg.setPosition(CoolUtil.fpsLerp(song1egg.x, -61, 0.08), CoolUtil.fpsLerp(song1egg.y, 137.5, 0.08));
+            song2building.setPosition(CoolUtil.fpsLerp(song2building.x, 171, 0.08), CoolUtil.fpsLerp(song2building.y, 58.3, 0.08));
+        case 1:
+            sky.setPosition(CoolUtil.fpsLerp(sky.x, 111.6, 0.08), CoolUtil.fpsLerp(sky.y, 49, 0.08));
+            bg.setPosition(CoolUtil.fpsLerp(bg.x, -668.4, 0.08), CoolUtil.fpsLerp(bg.y, -581, 0.08));
+            song1egg.setPosition(CoolUtil.fpsLerp(song1egg.x, -80.5, 0.08), CoolUtil.fpsLerp(song1egg.y, 298.75, 0.08));
+            song2building.setPosition(CoolUtil.fpsLerp(song2building.x, 158, 0.08), CoolUtil.fpsLerp(song2building.y, 165.8, 0.08));
+    }
 }
 
 function onChangeDifficulty(event:MenuChangeEvent) {
@@ -130,5 +125,31 @@ function onChangeDifficulty(event:MenuChangeEvent) {
 }
 
 function onChangeWeek(event:MenuChangeEvent) {
+    if (song1egg != null && song2building != null) {
+        switch event.value {
+            case 0:
+                song1egg.animation.play("high");
+                song2building.animation.play("idle");
+                
+                song1egg.offset.set(92.25, 139);
+                song2building.offset.set(43, 57);
+            case 1:
+                song1egg.animation.play("idle");
+                song2building.animation.play("high");
+    
+                song1egg.offset.set(89, 135);
+                song2building.offset.set(49, 65);
+        }
+    }
+}
 
+function onWeekSelect(event:WeekSelectEvent) {
+    switch curWeek {
+        case 0:
+            song1egg.animation.play("select");
+            song1egg.offset.set(89, 135);
+        case 1:
+            song2building.animation.play("select");
+            song2building.offset.set(43, 57);
+    }
 }
