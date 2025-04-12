@@ -16,6 +16,8 @@ var arrowr:FlxSprite;
 function postCreate() {
     FlxG.camera.scroll.set(0, -100);
 
+    curDifficulty = 0;
+
     remove(characterSprites);
     remove(weekSprites);
     for(e in [blackBar, scoreText, weekTitle, weekBG, tracklist, leftArrow, rightArrow]) {
