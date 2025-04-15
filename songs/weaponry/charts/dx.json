@@ -14,15 +14,6 @@
 		},
 		{
 			"params": [
-				true,
-				true,
-				false
-			],
-			"time": 0,
-			"name": "Ghost Trail"
-		},
-		{
-			"params": [
 				2,
 				1.2
 			],
