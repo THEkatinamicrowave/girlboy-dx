@@ -1,0 +1,34 @@
+{
+    "params": [
+        {
+            "name": "Toggle",
+            "type": "Bool",
+            "defaultValue": true
+        },
+        {
+            "name": "Fade Color",
+            "type": "ColorWheel",
+            "defaultValue": "#000000"
+        },
+        {
+            "name": "Fade Duration (in steps)",
+            "type": "Int(0, 9999)",
+            "defaultValue": 4
+        },
+        {
+            "name": "Overlapping HUD?",
+            "type": "Bool",
+            "defaultValue": false
+        },
+        {
+            "name": "Fade Tween Type",
+            "type": "DropDown('back', 'bounce', 'circ', 'cube', 'elastic', 'expo', 'linear', 'quad', 'quart', 'quint', 'sine', 'smoothStep', 'smootherStep')",
+            "defaultValue": "linear"
+        },
+        {
+            "name": "Fade Tween Direction",
+            "type": "DropDown('In', 'Out', 'InOut')",
+            "defaultValue": "InOut"
+        }
+    ]
+}

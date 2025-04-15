@@ -1,0 +1,19 @@
+{
+    "params": [
+        {
+            "name": "Toggle Dad Ghost",
+            "type": "Bool",
+            "defaultValue": true
+        },
+        {
+            "name": "Toggle Boyfriend Ghost",
+            "type": "Bool",
+            "defaultValue": true
+        },
+        {
+            "name": "Toggle Girlfriend Ghost",
+            "type": "Bool",
+            "defaultValue": true
+        }
+    ]
+}

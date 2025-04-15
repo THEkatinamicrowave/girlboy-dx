@@ -1,0 +1,29 @@
+{
+    "params": [
+        {
+            "name": "Bar Thickness (in pixels) (for both bars combined)",
+            "type": "Int(0, 720)",
+            "defaultValue": 100
+        },
+        {
+            "name": "Bar Speed (in steps)",
+            "type": "Int(0, 9999)",
+            "defaultValue": 4
+        },
+        {
+            "name": "Overlapping HUD?",
+            "type": "Bool",
+            "defaultValue": false
+        },
+        {
+            "name": "Movement Tween Type",
+            "type": "DropDown('back', 'bounce', 'circ', 'cube', 'elastic', 'expo', 'linear', 'quad', 'quart', 'quint', 'sine', 'smoothStep', 'smootherStep')",
+            "defaultValue": "linear"
+        },
+        {
+            "name": "Movement Tween Direction",
+            "type": "DropDown('In', 'Out', 'InOut')",
+            "defaultValue": "InOut"
+        }
+    ]
+}

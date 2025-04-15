@@ -1,0 +1,49 @@
+{
+    "params": [
+        {
+            "name": "Dad Toggle",
+            "type": "Bool",
+            "defaultValue": true
+        },
+        {
+            "name": "Boyfriend Toggle",
+            "type": "Bool",
+            "defaultValue": true
+        },
+        {
+            "name": "Girlfriend Toggle",
+            "type": "Bool",
+            "defaultValue": true
+        },
+        {
+            "name": "Stage Toggle",
+            "type": "Bool",
+            "defaultValue": true
+        },
+        {
+            "name": "Dad Color",
+            "type": "ColorWheel",
+            "defaultValue": "#000000"
+        },
+        {
+            "name": "Boyfriend Color",
+            "type": "ColorWheel",
+            "defaultValue": "#000000"
+        },
+        {
+            "name": "Girlfriend Color",
+            "type": "ColorWheel",
+            "defaultValue": "#000000"
+        },
+        {
+            "name": "Stage Color",
+            "type": "ColorWheel",
+            "defaultValue": "#FFFFFF"
+        },
+        {
+            "name": "Fade Time (in steps)",
+            "type": "Int(0, 9999)",
+            "defaultValue": 4
+        }
+    ]
+}
