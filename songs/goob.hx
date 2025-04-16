@@ -43,17 +43,10 @@ function postUpdate(elapsed:Float) {
             };
     
             for (c in strum.characters) {
-                if (c.animation.name == "idle" || c.animation.name == "danceLeft" || c.animation.name == "danceRight") {
-                    c.scale.set(propScale.x, propScale.y);
-                    c.skew.set(0, 0);
-
-                    c.setPosition(propPos.x, propPos.y);
-                } else {
-                    c.scale.set(CoolUtil.fpsLerp(c.scale.x, propScale.x, 0.1), CoolUtil.fpsLerp(c.scale.y, propScale.y, 0.1));
-                    c.skew.set(CoolUtil.fpsLerp(c.skew.x, 0, 0.1), CoolUtil.fpsLerp(c.skew.y, 0, 0.1));
-        
-                    c.setPosition(CoolUtil.fpsLerp(c.x, propPos.x, 0.15), CoolUtil.fpsLerp(c.y, propPos.y, 0.15));
-                }
+                if (c.animation.name == "idle" || c.animation.name == "danceLeft" || c.animation.name == "danceRight")
+                    scaleSkewSprite(c, propPos, propScale, 0, 1, 1);
+                else
+                    scaleSkewSprite(c, propPos, propScale, CoolUtil.fpsLerp(c.skew.x, 0, 0.1), CoolUtil.fpsLerp(c.scale.x, propScale.x, 0.1), CoolUtil.fpsLerp(c.scale.y, propScale.y, 0.1));
             }
         }
     }
@@ -73,24 +66,21 @@ function onNoteHit(event:NoteHitEvent) {
 
     if (!event.note.isSustainNote) {
         switch (event.note.strumID) {
-            case 0:
-                event.character.skew.set(5, 0);
-                event.character.scale.set(propScale.x, propScale.y);
-                event.character.setPosition(propPos.x - (propScale.x * event.character.height * Math.tan(Math.PI / 36)) / 2, propPos.y);
-            case 1:
-                event.character.skew.set(0, 0);
-                event.character.scale.set(propScale.x * 1.1, propScale.y * 0.9);
-                event.character.setPosition(propPos.x, propPos.y + (propScale.y * event.character.height * 0.05));
-            case 2:
-                event.character.skew.set(0, 0);
-                event.character.scale.set(propScale.x * 0.9, propScale.y * 1.1);
-                event.character.setPosition(propPos.x, propPos.y - (propScale.y * event.character.height * 0.05));
-            case 3:
-                event.character.skew.set(-5, 0);
-                event.character.scale.set(propScale.x, propScale.y);
-                event.character.setPosition(propPos.x + (propScale.x * event.character.height * Math.tan(Math.PI / 36)) / 2, propPos.y);
+            case 0: scaleSkewSprite(event.character, propPos, propScale, 5, 1, 1);
+            case 1: scaleSkewSprite(event.character, propPos, propScale, 0, 1.1, 0.9);
+            case 2: scaleSkewSprite(event.character, propPos, propScale, 0, 0.9, 1.1);
+            case 3: scaleSkewSprite(event.character, propPos, propScale, -5, 1, 1);
         }
     }
+}
+
+function scaleSkewSprite(sprite:FlxSprite, sPos:FlxPoint, sScale:FlxPoint, skew:Float, scaleX:Float, scaleY:Float) {
+    sprite.scale.set(scaleX, scaleY);
+    sprite.skew.set(skew, 0);
+    sprite.setPosition(
+        sPos.x - (sScale.x * sprite.height * Math.tan(skew * Math.PI / 180)) / 2,
+        sPos.y + (sScale.y * sprite.height * (1 - scaleY) / 2)
+    );
 }
 
 // function onPlayerMiss(event:NoteMissEvent) {
