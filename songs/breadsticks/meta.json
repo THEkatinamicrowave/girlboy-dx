@@ -5,7 +5,8 @@
 	"stepsPerBeat": 4,
 	"bpm": 200,
 	"difficulties": [
-		"NORMAL"
+		"NORMAL",
+		"DX"
 	],
 	"needsVoices": true,
 	"parsedColor": -15263706,
