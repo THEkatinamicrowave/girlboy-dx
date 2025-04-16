@@ -89,13 +89,13 @@ function postCreate() {
 }
 
 function postUpdate(elapsed:Float) {
-    switch curWeek {
-        case 0:
+    switch weeks[curWeek].name.toLowerCase() {
+        case "breadsticks":
             sky.setPosition(CoolUtil.fpsLerp(sky.x, 111.6, 0.08), CoolUtil.fpsLerp(sky.y, 49, 0.08));
             bg.setPosition(CoolUtil.fpsLerp(bg.x, -668.4, 0.08), CoolUtil.fpsLerp(bg.y, -581, 0.08));
             song1egg.setPosition(CoolUtil.fpsLerp(song1egg.x, -80.5, 0.08), CoolUtil.fpsLerp(song1egg.y, 298.75, 0.08));
             song2building.setPosition(CoolUtil.fpsLerp(song2building.x, 158, 0.08), CoolUtil.fpsLerp(song2building.y, 165.8, 0.08));
-        case 1:
+        case "weaponry":
             sky.setPosition(CoolUtil.fpsLerp(sky.x, 127.2, 0.08), CoolUtil.fpsLerp(sky.y, -80, 0.08));
             bg.setPosition(CoolUtil.fpsLerp(bg.x, -653, 0.08), CoolUtil.fpsLerp(bg.y, -709.6, 0.08));
             song1egg.setPosition(CoolUtil.fpsLerp(song1egg.x, -61, 0.08), CoolUtil.fpsLerp(song1egg.y, 137.5, 0.08));
@@ -123,14 +123,14 @@ function onChangeDifficulty(event:MenuChangeEvent) {
 
 function onChangeWeek(event:MenuChangeEvent) {
     if (song1egg != null && song2building != null) {
-        switch event.value {
-            case 0:
+        switch weeks[event.value].name.toLowerCase() {
+            case "breadsticks":
                 song1egg.animation.play("idle");
                 song2building.animation.play("high");
     
                 song1egg.offset.set(89, 135);
                 song2building.offset.set(49, 65);
-            case 1:
+            case "weaponry":
                 song1egg.animation.play("high");
                 song2building.animation.play("idle");
                 
@@ -141,11 +141,11 @@ function onChangeWeek(event:MenuChangeEvent) {
 }
 
 function onWeekSelect(event:WeekSelectEvent) {
-    switch curWeek {
-        case 0:
+    switch weeks[curWeek].name.toLowerCase() {
+        case "breadsticks":
             song2building.animation.play("select");
             song2building.offset.set(43, 57);
-        case 1:
+        case "weaponry":
             song1egg.animation.play("select");
             song1egg.offset.set(89, 135);
     }
