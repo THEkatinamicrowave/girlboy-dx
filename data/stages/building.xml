@@ -3,6 +3,7 @@
     <spr name="bg" sprite="bg" x="-845" y="-635" scroll="0.55" />
     <spr name="buildings" sprite="buildings" x="-462" y="40" scroll="0.85" />
     <spr name="roof" sprite="roof" x="-277" y="527" scroll="1" />
+    <spr name="rooflights" sprite="dx/roof_lights" x="-149" y="1067" alpha="0" scroll="1" />
 
     <boyfriend x="800" y="0" scroll="1" />
     <dad x="100" y="0" scroll="1" />

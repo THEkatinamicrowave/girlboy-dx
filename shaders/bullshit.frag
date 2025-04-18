@@ -2,6 +2,7 @@
 
 uniform vec3 glowColor;
 uniform vec2 maskPos;
+uniform float mixValue;
 
 void main() {
     // shift texture coordinates up by maskPos
@@ -17,5 +18,8 @@ void main() {
 
     // mask logic
     float invertedAlpha = (1.0 - maskColor.a) * baseColor.a;
-    gl_FragColor = mix(baseColor, colorScaledColor, 0.75) + vec4(glowColor * invertedAlpha, 0.0); // mix baseColor
+    vec4 shaderEffect = mix(baseColor, colorScaledColor, 0.75) + vec4(glowColor * invertedAlpha, 0.0);
+
+    // mixxxxxxxxxxxxxxxxxxxxxxxvalue
+    gl_FragColor = mix(baseColor, shaderEffect, mixValue);
 }
