@@ -21,9 +21,11 @@ function displayLoadingSequence() {
                 addGoof("\n\nFAILURE: file could not be fixed.", 0.1, () -> {
                     addGoof("\nAttempting workaround...", 2, () -> {
                         addGoof("\nAwaiting permissions...", 5, () -> {
-                            addGoof("\n\nPermissions forged!", 9, () -> {
-                                addGoof("\n\n\nRunning...", 0.1, () -> {
-                                    addGoof("\n", 6, killText);
+                            addGoof("\n\nPermission denied.\nForging permissions...", 9, () -> {
+                                addGoof("\nPermissions forged!", 4, () -> {
+                                    addGoof("\n\nRunning...", 2.3, () -> {
+                                        addGoof("\n", 3, killText);
+                                    });
                                 });
                             });
                         });
