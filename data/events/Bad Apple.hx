@@ -1,7 +1,6 @@
 //
 import funkin.backend.shaders.CustomShader;
 
-var gfShader:CustomShader = new CustomShader("badapple");
 var dadShader:CustomShader = new CustomShader("badapple");
 var bfShader:CustomShader = new CustomShader("badapple");
 var stageShader:CustomShader = new CustomShader("badapple");
@@ -9,12 +8,11 @@ var stageShader:CustomShader = new CustomShader("badapple");
 function postCreate() {
     trace("i might have eateded it :3");
 
-    gf.shader = gfShader;
     dad.shader = dadShader;
     boyfriend.shader = bfShader;
     for (a in stage.stageSprites) a.shader = stageShader;
 
-    for (s in [gfShader, dadShader, bfShader, stageShader]) s.mixValue = 0;
+    for (s in [dadShader, bfShader, stageShader]) s.mixValue = 0;
 }
 
 function onEvent(event:EventGameEvent) {
@@ -31,7 +29,6 @@ function onEvent(event:EventGameEvent) {
         var stageC = params[7];
         var fadeTime = params[8];
 
-        setShaderCol(gfShader, gfTog, gfShader.mixValue, gfC, fadeTime);
         setShaderCol(dadShader, dadTog, dadShader.mixValue, dadC, fadeTime);
         setShaderCol(bfShader, bfTog, bfShader.mixValue, bfC, fadeTime);
         setShaderCol(stageShader, stageTog, stageShader.mixValue, stageC, fadeTime);
