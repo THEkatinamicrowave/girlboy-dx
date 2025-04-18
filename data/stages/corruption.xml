@@ -1,0 +1,14 @@
+<!DOCTYPE codename-engine-stage>
+<stage name="corruption" folder="stages/sigma/" zoom="0.75">
+    <spr name="sky" sprite="goob" x="-444" y="-845" scroll="0.1"/>
+    <spr name="deadcity" sprite="deadcity" x="400" y="32" scroll="0.7"/>
+
+    <spr name="dumbass_rocks" sprite="dumbass_rocks" x="758" y="273" scroll="0.75"/>
+    <spr name="room" sprite="the_divide" x="-480" y="-762" scroll="0.97"/>
+    <spr name="shatterglass" sprite="shatterglass" x="1367" y="163" scroll="1"/>
+
+    <spr name="objects" sprite="objects" x="0" y="343" scroll="1"/>
+
+    <dad x="450" y="20" scroll="1"/>
+    <boyfriend x="1300" y="20" scroll="1"/>
+</stage>
