@@ -18,4 +18,6 @@
 	<anim name="singLEFTmiss-loop" anim="MISS left" x="-5" y="1" fps="12" loop="true" indices="1,2"/>
 	<anim name="singRIGHTmiss-loop" anim="MISS right" x="-57" y="4" fps="12" loop="true" indices="1,2"/>
 	<anim name="singDOWNmiss-loop" anim="MISS down" x="-22" y="-4" fps="12" loop="true" indices="1,2"/>
+	<anim name="hey" anim="HEY" x="-19" y="3" fps="12" loop="false"/>
+	<anim name="hey-loop" anim="HEY" x="-19" y="3" fps="24" loop="true" indices="1"/>
 </character>
