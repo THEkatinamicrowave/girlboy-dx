@@ -6,5 +6,5 @@
 	<anim name="singRIGHT" anim="right" x="-23" y="-33" fps="24" loop="true"/>
 	<anim name="singDOWN" anim="down" x="156" y="-97" fps="24" loop="true"/>
 	<anim name="blowup" anim="blow up" x="523" y="549" fps="24" loop="false" />
-	<anim name="blowup-loop" anim="blow up" x="523" y="549" fps="24" loop="true" indices="53"/>
+	<anim name="blowup-loop" anim="blow up" x="523" y="549" fps="24" loop="true" indices="43"/>
 </character>
