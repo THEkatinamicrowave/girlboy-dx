@@ -13,5 +13,7 @@
 	"icon": "exe",
 	"name": "corruption",
 	"color": "#9271FD",
-	"customValues": {}
+	"customValues": {
+		"startDead": "true"
+	}
 }
