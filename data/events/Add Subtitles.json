@@ -1,0 +1,24 @@
+{
+    "params": [
+        {
+            "name": "Text",
+            "type": "String",
+            "defaultValue": ""
+        },
+        {
+            "name": "Color",
+            "type": "ColorWheel",
+            "defaultValue": "#FFFFFF"
+        },
+        {
+            "name": "Size (I have no clue why you would ever go above 72)",
+            "type": "Int(1, 9999)",
+            "defaultValue": 36
+        },
+        {
+            "name": "Function",
+            "type": "DropDown('Clear', 'Add', 'New Line')",
+            "defaultValue": "Add"
+        }
+    ]
+}
