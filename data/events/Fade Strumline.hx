@@ -20,4 +20,7 @@ function fadeStrumline(sl:Int, alpha:Float, time:Float, td:FlxEase) {
     for (s in strumLines.members[sl].members) {
         FlxTween.tween(s, { alpha: alpha }, (Conductor.stepCrochet / 1000) * time, { ease: td });
     }
+    for (s in strumLines.members[sl].notes) {
+        FlxTween.tween(s, { alpha: alpha }, (Conductor.stepCrochet / 1000) * time, { ease: td });
+    }
 }
