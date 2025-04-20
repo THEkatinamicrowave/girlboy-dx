@@ -8,5 +8,5 @@
 	<anim name="blowup" anim="blow up" x="523" y="549" fps="24" loop="false" indices="0..8" />
 	<anim name="blowup-loop" anim="blow up" x="523" y="549" fps="24" loop="true" indices="8" />
 	<anim name="fall" anim="blow up" x="523" y="549" fps="24" loop="false" indices="9..23" />
-	<anim name="fall-loop" anim="blow up" x="523" y="549" fps="24" loop="false" indices="23" />
+	<anim name="fall-loop" anim="blow up" x="523" y="549" fps="24" loop="true" indices="23" />
 </character>
