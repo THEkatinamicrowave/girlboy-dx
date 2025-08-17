@@ -2,19 +2,7 @@
 	"events": [
 		{
 			"params": [
-				"970,600",
-				1.4,
 				0,
-				"linear",
-				"InOut",
-				false
-			],
-			"name": "Zoom Event",
-			"time": 0
-		},
-		{
-			"params": [
-				false,
 				-16777216,
 				112,
 				false,
@@ -26,27 +14,69 @@
 		},
 		{
 			"params": [
-				"970,600",
-				0.8,
-				111,
-				"cube",
-				"InOut",
+				970,
+				600,
+				false,
+				4,
+				"CLASSIC",
+				"In",
 				false
 			],
-			"name": "Zoom Event",
-			"time": 111.111111111111
+			"time": 0,
+			"name": "Camera Position"
 		},
 		{
 			"params": [
-				"0,0",
+				false,
+				1.4,
+				"camGame",
+				4,
+				"linear",
+				"In",
+				"direct",
+				false
+			],
+			"time": 0,
+			"name": "Camera Zoom"
+		},
+		{
+			"params": [
+				true,
+				0.8,
+				"camGame",
+				111,
+				"cube",
+				"InOut",
+				"direct",
+				false
+			],
+			"time": 111.111111111111,
+			"name": "Camera Zoom"
+		},
+		{
+			"params": [
+				0,
+				true,
+				4,
+				"CLASSIC",
+				"In"
+			],
+			"time": 14222.2222222222,
+			"name": "Camera Movement"
+		},
+		{
+			"params": [
+				true,
 				1,
+				"camGame",
 				32,
 				"expo",
 				"Out",
-				true
+				"stage",
+				false
 			],
-			"name": "Zoom Event",
-			"time": 14222.2222222222
+			"time": 14222.2222222222,
+			"name": "Camera Zoom"
 		},
 		{
 			"params": [
@@ -57,27 +87,28 @@
 		},
 		{
 			"params": [
-				"1250,570",
-				0.9,
-				32,
+				true,
+				1,
+				"camGame",
+				64,
 				"sine",
 				"InOut",
+				"direct",
 				false
 			],
-			"name": "Zoom Event",
-			"time": 35555.5555555556
+			"time": 35555.5555555556,
+			"name": "Camera Zoom"
 		},
 		{
 			"params": [
-				"600,560",
-				1,
+				0,
+				true,
 				32,
-				"sine",
-				"InOut",
-				false
+				"quad",
+				"InOut"
 			],
-			"name": "Zoom Event",
-			"time": 39111.1111111111
+			"time": 39111.1111111111,
+			"name": "Camera Movement"
 		},
 		{
 			"params": [
@@ -91,7 +122,11 @@
 		},
 		{
 			"params": [
-				0
+				0,
+				true,
+				4,
+				"CLASSIC",
+				"In"
 			],
 			"time": 42666.6666666667,
 			"name": "Camera Movement"
@@ -105,34 +140,38 @@
 		},
 		{
 			"params": [
-				true,
-				true,
-				true,
-				true,
+				1,
+				1,
+				1,
+				1,
 				-65536,
 				-16777216,
 				-16777216,
 				-16777216,
-				0
+				0,
+				"linear",
+				"In"
 			],
 			"name": "Bad Apple",
 			"time": 42666.6666666667
 		},
 		{
 			"params": [
-				"0,0",
+				true,
 				1,
-				8,
+				"camGame",
+				16,
 				"expo",
 				"Out",
-				true
+				"stage",
+				false
 			],
 			"time": 42666.6666666667,
-			"name": "Zoom Event"
+			"name": "Camera Zoom"
 		},
 		{
 			"params": [
-				true,
+				1,
 				-16777216,
 				8,
 				false,
@@ -144,22 +183,24 @@
 		},
 		{
 			"params": [
-				true,
-				true,
-				true,
-				true,
+				1,
+				1,
+				1,
+				1,
 				-16777216,
 				-16777216,
 				-16777216,
 				-65536,
-				0
+				0,
+				"linear",
+				"In"
 			],
 			"name": "Bad Apple",
 			"time": 44215.0537634409
 		},
 		{
 			"params": [
-				false,
+				0,
 				-16777216,
 				0,
 				false,
@@ -181,30 +222,34 @@
 		},
 		{
 			"params": [
-				true,
-				true,
-				true,
-				true,
+				1,
+				1,
+				1,
+				1,
 				-65536,
 				-65536,
 				-65536,
 				-16777216,
-				0
+				0,
+				"linear",
+				"In"
 			],
 			"time": 44311.8279569892,
 			"name": "Bad Apple"
 		},
 		{
 			"params": [
-				true,
-				true,
-				true,
-				true,
+				1,
+				1,
+				1,
+				1,
 				-16777216,
 				-16777216,
 				-16777216,
 				-65536,
-				0
+				0,
+				"linear",
+				"In"
 			],
 			"time": 44408.6021505376,
 			"name": "Bad Apple"
@@ -221,30 +266,34 @@
 		},
 		{
 			"params": [
-				true,
-				true,
-				true,
-				true,
+				1,
+				1,
+				1,
+				1,
 				-65536,
 				-65536,
 				-65536,
 				-16777216,
-				0
+				0,
+				"linear",
+				"In"
 			],
 			"name": "Bad Apple",
 			"time": 44505.376344086
 		},
 		{
 			"params": [
-				true,
-				true,
-				true,
-				true,
+				1,
+				1,
+				1,
+				1,
 				-16777216,
 				-16777216,
 				-16777216,
 				-65536,
-				0
+				0,
+				"linear",
+				"In"
 			],
 			"name": "Bad Apple",
 			"time": 44602.1505376344
@@ -261,30 +310,34 @@
 		},
 		{
 			"params": [
-				true,
-				true,
-				true,
-				true,
+				1,
+				1,
+				1,
+				1,
 				-65536,
 				-65536,
 				-65536,
 				-16777216,
-				0
+				0,
+				"linear",
+				"In"
 			],
 			"time": 44698.9247311828,
 			"name": "Bad Apple"
 		},
 		{
 			"params": [
-				true,
-				true,
-				true,
-				true,
+				1,
+				1,
+				1,
+				1,
 				-16777216,
 				-16777216,
 				-16777216,
 				-65536,
-				0
+				0,
+				"linear",
+				"In"
 			],
 			"time": 44795.6989247312,
 			"name": "Bad Apple"
@@ -301,30 +354,34 @@
 		},
 		{
 			"params": [
-				true,
-				true,
-				true,
-				true,
+				1,
+				1,
+				1,
+				1,
 				-65536,
 				-65536,
 				-65536,
 				-16777216,
-				0
+				0,
+				"linear",
+				"In"
 			],
 			"name": "Bad Apple",
 			"time": 44892.4731182796
 		},
 		{
 			"params": [
-				true,
-				true,
-				true,
-				true,
+				1,
+				1,
+				1,
+				1,
 				-16777216,
 				-16777216,
 				-16777216,
 				-65536,
-				0
+				0,
+				"linear",
+				"In"
 			],
 			"name": "Bad Apple",
 			"time": 44989.247311828
@@ -341,30 +398,34 @@
 		},
 		{
 			"params": [
-				true,
-				true,
-				true,
-				true,
+				1,
+				1,
+				1,
+				1,
 				-65536,
 				-65536,
 				-65536,
 				-16777216,
-				0
+				0,
+				"linear",
+				"In"
 			],
 			"time": 45086.0215053763,
 			"name": "Bad Apple"
 		},
 		{
 			"params": [
-				true,
-				true,
-				true,
-				true,
+				1,
+				1,
+				1,
+				1,
 				-16777216,
 				-16777216,
 				-16777216,
 				-65536,
-				0
+				0,
+				"linear",
+				"In"
 			],
 			"time": 45182.7956989247,
 			"name": "Bad Apple"
@@ -381,30 +442,34 @@
 		},
 		{
 			"params": [
-				true,
-				true,
-				true,
-				true,
+				1,
+				1,
+				1,
+				1,
 				-65536,
 				-65536,
 				-65536,
 				-16777216,
-				0
+				0,
+				"linear",
+				"In"
 			],
 			"name": "Bad Apple",
 			"time": 45279.5698924731
 		},
 		{
 			"params": [
-				true,
-				true,
-				true,
-				true,
+				1,
+				1,
+				1,
+				1,
 				-16777216,
 				-16777216,
 				-16777216,
 				-65536,
-				0
+				0,
+				"linear",
+				"In"
 			],
 			"name": "Bad Apple",
 			"time": 45376.3440860215
@@ -421,60 +486,68 @@
 		},
 		{
 			"params": [
-				true,
-				true,
-				true,
-				true,
+				1,
+				1,
+				1,
+				1,
 				-65536,
 				-65536,
 				-65536,
 				-16777216,
-				0
+				0,
+				"linear",
+				"In"
 			],
 			"time": 45473.1182795699,
 			"name": "Bad Apple"
 		},
 		{
 			"params": [
-				true,
-				true,
-				true,
-				true,
+				1,
+				1,
+				1,
+				1,
 				-16777216,
 				-16777216,
 				-16777216,
 				-65536,
-				0
+				0,
+				"linear",
+				"In"
 			],
 			"time": 45569.8924731183,
 			"name": "Bad Apple"
 		},
 		{
 			"params": [
-				true,
-				true,
-				true,
-				true,
+				1,
+				1,
+				1,
+				1,
 				-65536,
 				-65536,
 				-65536,
 				-16777216,
-				0
+				0,
+				"linear",
+				"In"
 			],
 			"name": "Bad Apple",
 			"time": 45666.6666666667
 		},
 		{
 			"params": [
-				false,
-				false,
-				false,
-				false,
+				0,
+				0,
+				0,
+				0,
 				-16777216,
 				-16777216,
 				-16777216,
 				-65536,
-				0
+				0,
+				"linear",
+				"In"
 			],
 			"name": "Bad Apple",
 			"time": 45763.4408602151
@@ -779,7 +852,11 @@
 		},
 		{
 			"params": [
-				0
+				0,
+				true,
+				4,
+				"CLASSIC",
+				"In"
 			],
 			"time": 81786.9012707723,
 			"name": "Camera Movement"
@@ -793,34 +870,55 @@
 		},
 		{
 			"params": [
-				"970,540",
-				0.6,
-				16,
-				"expo",
-				"Out",
+				970,
+				540,
+				true,
+				4,
+				"CLASSIC",
+				"In",
 				false
 			],
-			"name": "Zoom Event",
-			"time": 81786.9012707723
+			"time": 81786.9012707723,
+			"name": "Camera Position"
 		},
 		{
 			"params": [
-				1
+				true,
+				0.85,
+				"camGame",
+				16,
+				"expo",
+				"Out",
+				"stage",
+				false
+			],
+			"time": 81786.9012707723,
+			"name": "Camera Zoom"
+		},
+		{
+			"params": [
+				1,
+				true,
+				4,
+				"CLASSIC",
+				"In"
 			],
 			"time": 87433.9600943017,
 			"name": "Camera Movement"
 		},
 		{
 			"params": [
-				"0,0",
+				true,
 				1,
+				"camGame",
 				16,
 				"expo",
 				"Out",
-				true
+				"stage",
+				false
 			],
-			"name": "Zoom Event",
-			"time": 87433.9600943017
+			"time": 87433.9600943017,
+			"name": "Camera Zoom"
 		},
 		{
 			"params": [
@@ -831,7 +929,11 @@
 		},
 		{
 			"params": [
-				0
+				0,
+				true,
+				4,
+				"CLASSIC",
+				"In"
 			],
 			"time": 93081.0189178311,
 			"name": "Camera Movement"
@@ -869,7 +971,7 @@
 			"params": [
 				300,
 				16,
-				false,
+				true,
 				"expo",
 				"Out"
 			],
@@ -878,113 +980,183 @@
 		},
 		{
 			"params": [
+				true,
+				0,
 				"I'M",
-				-65529,
+				false,
+				"vcr.ttf",
 				36,
-				"Add"
+				-65536,
+				0,
+				false
 			],
 			"time": 93081.0189178311,
-			"name": "Add Subtitles"
+			"name": "Subtitles"
 		},
 		{
 			"params": [
-				"GONNA",
-				-65536,
+				false,
+				0,
+				"GON-",
+				true,
+				"vcr.ttf",
 				36,
-				"Add"
+				-65536,
+				0,
+				false
 			],
 			"time": 93595.3046321168,
-			"name": "Add Subtitles"
+			"name": "Subtitles"
 		},
 		{
 			"params": [
-				"GET'",
-				-65536,
+				false,
+				1,
+				"NA",
+				false,
+				"vcr.ttf",
 				36,
-				"Add"
-			],
-			"name": "Add Subtitles",
-			"time": 94109.5903464025
-		},
-		{
-			"params": [
-				"CHAAAAAA",
 				-65536,
-				36,
-				"Add"
+				0,
+				false
 			],
-			"time": 94538.1617749739,
-			"name": "Add Subtitles"
+			"name": "Subtitles",
+			"time": 93852.4474892596
 		},
 		{
 			"params": [
+				false,
+				0,
+				"GET",
+				true,
+				"vcr.ttf",
+				36,
+				-65536,
+				0,
+				false
+			],
+			"time": 94109.5903464025,
+			"name": "Subtitles"
+		},
+		{
+			"params": [
+				false,
+				0,
+				"'CHA",
+				false,
+				"vcr.ttf",
+				36,
+				-65536,
+				0,
+				false
+			],
+			"name": "Subtitles",
+			"time": 94538.1617749739
+		},
+		{
+			"params": [
+				true,
+				0,
 				"",
-				-1,
+				false,
+				"vcr.ttf",
 				36,
-				"Clear"
+				-65536,
+				0,
+				false
 			],
 			"time": 95823.8760606882,
-			"name": "Add Subtitles"
+			"name": "Subtitles"
 		},
 		{
 			"params": [
-				"IIII",
-				-65536,
+				false,
+				0,
+				"I",
+				false,
+				"vcr.ttf",
 				36,
-				"Add"
+				-65536,
+				0,
+				false
 			],
-			"time": 96338.1617749739,
-			"name": "Add Subtitles"
+			"name": "Subtitles",
+			"time": 96338.1617749739
 		},
 		{
 			"params": [
-				"AMM",
-				-65536,
+				false,
+				0,
+				"AM",
+				true,
+				"vcr.ttf",
 				36,
-				"Add"
+				-65536,
+				0,
+				false
 			],
-			"name": "Add Subtitles",
-			"time": 97023.8760606882
+			"time": 97023.8760606882,
+			"name": "Subtitles"
 		},
 		{
 			"params": [
-				"........",
+				true,
+				0,
+				"(dramatic pause)",
+				false,
+				"vcr.ttf",
+				14,
 				-65536,
-				36,
-				"Clear"
+				0,
+				false
 			],
 			"time": 97538.1617749739,
-			"name": "Add Subtitles"
+			"name": "Subtitles"
 		},
 		{
 			"params": [
-				"GOD !!!!111!!! 1",
-				-65536,
+				true,
+				0,
+				"GOD!!!!111!!! 1",
+				false,
+				"vcr.ttf",
 				54,
-				"Add"
+				-65536,
+				0,
+				false
 			],
 			"time": 98052.4474892596,
-			"name": "Add Subtitles"
+			"name": "Subtitles"
 		},
 		{
 			"params": [
+				true,
+				0,
 				"",
-				-1,
+				false,
+				"vcr.ttf",
 				36,
-				"Clear"
+				-65536,
+				0,
+				false
 			],
 			"time": 99595.3046321168,
-			"name": "Add Subtitles"
+			"name": "Subtitles"
 		},
 		{
 			"params": [
-				"(evil EVIL TERRIBLE MAD I HATE laughter)",
-				-65536,
+				false,
+				0,
+				"(evil EVIL TERRIBLE MADE I HATE laughter)",
+				false,
+				"vcr.ttf",
 				24,
-				"Add"
+				-65536,
+				42,
+				false
 			],
 			"time": 99938.1617749739,
-			"name": "Add Subtitles"
+			"name": "Subtitles"
 		},
 		{
 			"params": [
@@ -1007,16 +1179,6 @@
 			],
 			"name": "Fade Strumline",
 			"time": 103709.590346402
-		},
-		{
-			"params": [
-				"",
-				-1,
-				36,
-				"Clear"
-			],
-			"time": 103709.590346402,
-			"name": "Add Subtitles"
 		},
 		{
 			"params": [
@@ -1046,7 +1208,7 @@
 			"params": [
 				0,
 				16,
-				false,
+				true,
 				"expo",
 				"Out"
 			],
@@ -1093,7 +1255,11 @@
 		},
 		{
 			"params": [
-				0
+				0,
+				true,
+				4,
+				"CLASSIC",
+				"In"
 			],
 			"time": 125385.780822593,
 			"name": "Camera Movement"
@@ -1107,6 +1273,17 @@
 		},
 		{
 			"params": [
+				150,
+				16,
+				false,
+				"quart",
+				"Out"
+			],
+			"time": 125385.780822593,
+			"name": "Cinematic Bars"
+		},
+		{
+			"params": [
 				1
 			],
 			"time": 131032.839646122,
@@ -1114,31 +1291,63 @@
 		},
 		{
 			"params": [
-				"940,550",
-				0.6,
+				0,
 				8,
-				"expo",
-				"Out",
+				false,
+				"sine",
+				"Out"
+			],
+			"time": 135268.133763769,
+			"name": "Cinematic Bars"
+		},
+		{
+			"params": [
+				970,
+				540,
+				true,
+				4,
+				"CLASSIC",
+				"In",
 				false
 			],
-			"name": "Zoom Event",
-			"time": 135268.133763769
+			"time": 135268.133763769,
+			"name": "Camera Position"
 		},
 		{
 			"params": [
-				"0,0",
-				1,
-				8,
+				true,
+				0.85,
+				"camGame",
+				16,
 				"expo",
 				"Out",
-				true
+				"stage",
+				false
 			],
-			"time": 136679.898469652,
-			"name": "Zoom Event"
+			"time": 135268.133763769,
+			"name": "Camera Zoom"
 		},
 		{
 			"params": [
-				0
+				true,
+				1,
+				"camGame",
+				16,
+				"expo",
+				"Out",
+				"stage",
+				false
+			],
+			"name": "Camera Zoom",
+			"time": 136679.898469652
+		},
+		{
+			"params": [
+				0,
+				true,
+				4,
+				"CLASSIC",
+				"In"
 			],
 			"time": 136679.898469652,
 			"name": "Camera Movement"
@@ -1159,7 +1368,11 @@
 		},
 		{
 			"params": [
-				0
+				0,
+				false,
+				4,
+				"CLASSIC",
+				"In"
 			],
 			"name": "Camera Movement",
 			"time": 139422.755612509
@@ -1174,7 +1387,11 @@
 		},
 		{
 			"params": [
-				1
+				1,
+				false,
+				4,
+				"CLASSIC",
+				"In"
 			],
 			"time": 139937.041326795,
 			"name": "Camera Movement"
@@ -1189,7 +1406,11 @@
 		},
 		{
 			"params": [
-				0
+				0,
+				false,
+				4,
+				"CLASSIC",
+				"In"
 			],
 			"time": 140451.32704108,
 			"name": "Camera Movement"
@@ -1204,7 +1425,11 @@
 		},
 		{
 			"params": [
-				1
+				1,
+				false,
+				4,
+				"CLASSIC",
+				"In"
 			],
 			"name": "Camera Movement",
 			"time": 140965.612755366
@@ -1219,7 +1444,11 @@
 		},
 		{
 			"params": [
-				0
+				0,
+				false,
+				4,
+				"CLASSIC",
+				"In"
 			],
 			"name": "Camera Movement",
 			"time": 141479.898469652
@@ -1234,7 +1463,11 @@
 		},
 		{
 			"params": [
-				1
+				1,
+				false,
+				4,
+				"CLASSIC",
+				"In"
 			],
 			"time": 141822.755612509,
 			"name": "Camera Movement"
@@ -1256,7 +1489,11 @@
 		},
 		{
 			"params": [
-				0
+				0,
+				true,
+				4,
+				"CLASSIC",
+				"In"
 			],
 			"time": 142165.612755366,
 			"name": "Camera Movement"
@@ -3100,16 +3337,13 @@
 			"name": "BPM Change"
 		}
 	],
-	"scrollSpeed": 3,
-	"codenameChart": true,
 	"strumLines": [
 		{
-			"strumScale": 1,
-			"position": "dad",
+			"keyCount": 4,
 			"notes": [
 				{
 					"id": 2,
-					"sLen": 336.000000000002,
+					"sLen": 336.000000000004,
 					"time": 14222.2222222222,
 					"type": 0
 				},
@@ -3805,13 +4039,13 @@
 				},
 				{
 					"id": 1,
-					"sLen": 91,
+					"sLen": 90.9999999999563,
 					"time": 71423.2649071359,
 					"type": 0
 				},
 				{
 					"id": 0,
-					"sLen": 273,
+					"sLen": 272.999999999956,
 					"time": 71605.0830889541,
 					"type": 0
 				},
@@ -3841,7 +4075,7 @@
 				},
 				{
 					"id": 0,
-					"sLen": 273,
+					"sLen": 272.999999999956,
 					"time": 72695.9921798632,
 					"type": 0
 				},
@@ -3943,7 +4177,7 @@
 				},
 				{
 					"id": 1,
-					"sLen": 273,
+					"sLen": 272.999999999985,
 					"time": 75605.0830889541,
 					"type": 0
 				},
@@ -4375,7 +4609,7 @@
 				},
 				{
 					"id": 0,
-					"sLen": 262,
+					"sLen": 261.999999999985,
 					"time": 97023.8760606882,
 					"type": 0
 				},
@@ -4405,7 +4639,7 @@
 				},
 				{
 					"id": 0,
-					"sLen": 688,
+					"sLen": 688.000000000044,
 					"time": 99933.8760606882,
 					"type": 0
 				},
@@ -4441,7 +4675,7 @@
 				},
 				{
 					"id": 2,
-					"sLen": 89.0000000000146,
+					"sLen": 89,
 					"time": 103251.018917831,
 					"type": 0
 				},
@@ -5095,7 +5329,7 @@
 				},
 				{
 					"id": 2,
-					"sLen": 177.999999999884,
+					"sLen": 177.999999999869,
 					"time": 127503.427881416,
 					"type": 0
 				},
@@ -7620,20 +7854,22 @@
 					"type": 0
 				}
 			],
+			"position": "dad",
+			"strumScale": 1,
+			"visible": true,
+			"type": 0,
 			"characters": [
 				"exe"
 			],
-			"type": 0,
-			"visible": true,
 			"strumPos": [
 				0,
 				50
 			],
-			"vocalsSuffix": "",
-			"strumLinePos": 0.25
+			"strumLinePos": 0.25,
+			"vocalsSuffix": ""
 		},
 		{
-			"position": "boyfriend",
+			"keyCount": 4,
 			"notes": [
 				{
 					"id": 1,
@@ -7655,7 +7891,7 @@
 				},
 				{
 					"id": 0,
-					"sLen": 783.999999999996,
+					"sLen": 784.000000000004,
 					"time": 30222.2222222222,
 					"type": 0
 				},
@@ -7667,7 +7903,7 @@
 				},
 				{
 					"id": 2,
-					"sLen": 783.999999999982,
+					"sLen": 783.999999999985,
 					"time": 32000,
 					"type": 0
 				},
@@ -8255,7 +8491,7 @@
 				},
 				{
 					"id": 1,
-					"sLen": 1197,
+					"sLen": 1196.99999999996,
 					"time": 70150.5376344087,
 					"type": 0
 				},
@@ -8315,7 +8551,7 @@
 				},
 				{
 					"id": 0,
-					"sLen": 273,
+					"sLen": 272.999999999956,
 					"time": 77423.2649071359,
 					"type": 0
 				},
@@ -8453,7 +8689,7 @@
 				},
 				{
 					"id": 3,
-					"sLen": 273,
+					"sLen": 272.999999999956,
 					"time": 81423.2649071359,
 					"type": 0
 				},
@@ -11296,13 +11532,17 @@
 					"type": 0
 				}
 			],
+			"position": "boyfriend",
+			"type": 1,
 			"characters": [
 				"bf"
 			],
-			"visible": true,
-			"type": 1
+			"visible": true
 		}
 	],
+	"codenameChart": true,
+	"scrollSpeed": 3,
+	"chartVersion": "1.6.0",
 	"stage": "corruption",
 	"noteTypes": []
 }

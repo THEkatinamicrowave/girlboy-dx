@@ -1,19 +1,17 @@
 {
-	"beatsPerMeasure": 4,
+	"customValues": {
+		"startAlpha": "1"
+	},
+	"color": "#9271FD",
 	"opponentModeAllowed": false,
-	"coopAllowed": false,
-	"stepsPerBeat": 4,
-	"bpm": 135,
 	"difficulties": [
 		"NORMAL"
 	],
-	"needsVoices": true,
-	"parsedColor": -7179779,
-	"displayName": "Corruption",
 	"icon": "exe",
-	"name": "corruption",
-	"color": "#9271FD",
-	"customValues": {
-		"startDead": "true"
-	}
+	"coopAllowed": false,
+	"stepsPerBeat": 4,
+	"displayName": "Corruption",
+	"needsVoices": true,
+	"beatsPerMeasure": 4,
+	"bpm": 135
 }

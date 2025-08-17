@@ -1,20 +1,18 @@
 {
-	"beatsPerMeasure": 4,
+	"customValues": {
+		"startAlpha": 1
+	},
+	"color": "#0C49B0",
 	"opponentModeAllowed": true,
-	"coopAllowed": true,
-	"stepsPerBeat": 4,
-	"bpm": 140,
 	"difficulties": [
 		"NORMAL",
 		"DX"
 	],
-	"needsVoices": true,
-	"parsedColor": -15971920,
-	"displayName": "Weaponry",
 	"icon": "girlboy",
-	"name": "weaponry",
-	"color": "#0C49B0",
-	"customValues": {
-		"startDead": "true"
-	}
+	"coopAllowed": true,
+	"stepsPerBeat": 4,
+	"displayName": "Weaponry",
+	"needsVoices": true,
+	"beatsPerMeasure": 4,
+	"bpm": 140
 }
