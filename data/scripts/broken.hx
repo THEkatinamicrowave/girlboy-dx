@@ -1,5 +1,5 @@
 //
 function postCreate(event:TransitionCreationEvent) {
-    transitionTween.cancel();
-    finish();
+	transitionTween.cancel();
+	finish();
 }

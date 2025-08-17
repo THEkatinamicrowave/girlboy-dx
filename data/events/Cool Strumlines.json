@@ -1,9 +1,9 @@
 {
-    "params": [
-        {
-            "name": "Toggle?",
-            "type": "Bool",
-            "defaultValue": true
-        }
-    ]
+	"params": [
+		{
+			"name": "Toggle?",
+			"type": "Bool",
+			"defaultValue": true
+		}
+	]
 }

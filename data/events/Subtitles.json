@@ -1,49 +1,49 @@
 {
-    "params": [
-        {
-            "name": "Clear Original Text?",
-            "type": "Bool",
-            "defaultValue": false
-        },
-        {
-            "name": "Characters to Remove from the End",
-            "type": "Int(0, 100)",
-            "defaultValue": ""
-        },
-        {
-            "name": "Text to Add",
-            "type": "String",
-            "defaultValue": ""
-        },
-        {
-            "name": "Add space?",
-            "type": "Bool",
-            "defaultValue": false
-        },
-        {
-            "name": "Text Font (from \"assets/fonts/...\" or \"mods/myMod/fonts/...\")",
-            "type": "String",
-            "defaultValue": "vcr.ttf"
-        },
-        {
-            "name": "Text Size",
-            "type": "Int(1, 144)",
-            "defaultValue": 36
-        },
-        {
-            "name": "Text Color",
-            "type": "ColorWheel",
-            "defaultValue": "#FFFFFF"
-        },
-        {
-            "name": "Time to Fade (Steps)",
-            "type": "Float(0, 9999, 0.01, 2)",
-            "defaultValue": 0
-        },
-        {
-            "name": "Do Animation? (pop-in animation from Due Debts BF Mix subs)",
-            "type": "Bool",
-            "defaultValue": true
-        }
-    ]
+	"params": [
+		{
+			"name": "Clear Original Text?",
+			"type": "Bool",
+			"defaultValue": false
+		},
+		{
+			"name": "Characters to Remove from the End",
+			"type": "Int(0, 100)",
+			"defaultValue": ""
+		},
+		{
+			"name": "Text to Add",
+			"type": "String",
+			"defaultValue": ""
+		},
+		{
+			"name": "Add space?",
+			"type": "Bool",
+			"defaultValue": false
+		},
+		{
+			"name": "Text Font (from \"assets/fonts/...\" or \"mods/myMod/fonts/...\")",
+			"type": "String",
+			"defaultValue": "vcr.ttf"
+		},
+		{
+			"name": "Text Size",
+			"type": "Int(1, 144)",
+			"defaultValue": 36
+		},
+		{
+			"name": "Text Color",
+			"type": "ColorWheel",
+			"defaultValue": "#FFFFFF"
+		},
+		{
+			"name": "Time to Fade (Steps)",
+			"type": "Float(0, 9999, 0.01, 2)",
+			"defaultValue": 0
+		},
+		{
+			"name": "Do Animation? (pop-in animation from Due Debts BF Mix subs)",
+			"type": "Bool",
+			"defaultValue": true
+		}
+	]
 }   

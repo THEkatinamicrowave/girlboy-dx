@@ -1,7 +1,7 @@
 <!DOCTYPE codename-engine-week>
 <week name="Breadsticks" chars="none,none,none" sprite="week2">
-    <song>Breadsticks</song>
+	<song>Breadsticks</song>
 
-    <difficulty name="Normal"/>
-    <difficulty name="DX"/>
+	<difficulty name="Normal"/>
+	<difficulty name="DX"/>
 </week>
