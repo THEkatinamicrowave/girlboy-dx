@@ -1,11 +1,9 @@
 <!DOCTYPE codename-mod-credits>
 <!-- i LOOOVE bees! -->
 <menu name="girlboy.xml hi" desc="Those buddys">
-	<!-- \/ You can also set the portrait shader as false as you can see below in the github one -->
-	<!-- <credit name="Credit Example" desc="Click me to know more about me!" icon="credit icon example" size="130" url="https://youtu.be/fugtxz1znVw"/> -->
-	<credit name="WuffGaming" desc="these credits are in an xml file!" icon="none" size="100" portrait="false" url="https://www.youtube.com/@WuffGaming" />
-	<credit name="Xidazed" desc="ya musicc" icon="none" size="100" portrait="false" url="https://www.youtube.com/channel/UCWehcOUE9sGkxIbeA3fOEbw"/>
-	<credit name="ImaLineOfCode" desc="ya dx music Boy" icon="none" size="100" portrait="false" url="https://www.youtube.com/@ImaLineOfCode/videos"/>
-	<credit name="Microkat" desc="hey he coded everything give him money (also like 4 pieces of art but FUCK you)" icon="none" size="100" portrait="false" url="https://www.youtube.com/@THEcatinamicrowave"/>
-	<credit name="Panbread" desc="charter" icon="none" size="100" portrait="false" url="https://www.youtube.com/channel/UCKpemsMbyC7q4PDTpLzjrjA"/>
+	<credit name="WuffGaming" desc="these credits are in an xml file!" portrait="false" url="https://www.youtube.com/@WuffGaming" />
+	<credit name="Xidazed" desc="ya musicc" portrait="false" url="https://www.youtube.com/@OsuniMsc"/>
+	<credit name="ImaLineOfCode" desc="ya dx music Boy" portrait="false" url="https://www.youtube.com/@ImaLineOfCode"/>
+	<credit name="Microkat" desc="hey he coded everything give him money (also like 4 pieces of art but FUCK you)" portrait="false" url="https://www.youtube.com/@THEcatinamicrowave"/>
+	<credit name="Panbread" desc="charter (every fucking one of these links is a youtube channel)" portrait="false" url="https://www.youtube.com/@PanduransAkaPan"/>
 </menu>
