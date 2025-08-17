@@ -1,49 +1,82 @@
 //
-import funkin.backend.shaders.CustomShader;
+import openfl.geom.ColorTransform;
 
-var dadShader:CustomShader = new CustomShader("badapple");
-var bfShader:CustomShader = new CustomShader("badapple");
-var stageShader:CustomShader = new CustomShader("badapple");
+var stageCover:FlxSprite;
 
 function postCreate() {
-    trace("i might have eateded it :3");
+    stageCover = new FlxSprite().makeSolid(5*FlxG.width, 5*FlxG.height, FlxColor.WHITE);
+    stageCover.alpha = 0;
+    stageCover.screenCenter();
 
-    dad.shader = dadShader;
-    boyfriend.shader = bfShader;
-    for (a in stage.stageSprites) a.shader = stageShader;
-
-    for (s in [dadShader, bfShader, stageShader]) s.mixValue = 0;
+    var cs = strumLines.members.length == 2 ? [dad, bf] : [dad, bf, gf];
+    var min = Math.POSITIVE_INFINITY;
+    for (c in cs) if (members.indexOf(c) < min) min = members.indexOf(c);
+    insert(min, stageCover);
 }
 
-function onEvent(event:EventGameEvent) {
-    if (event.event.name == "Bad Apple") {
-        var params = event.event.params;
+function onEvent(_e:EventGameEvent) {
+    var e = _e.event;
+    if (e.name == "Bad Apple") {
+        var p = e.params;
 
-        var dadTog = params[0];
-        var bfTog = params[1];
-        var gfTog = params[2];
-        var stageTog = params[3];
-        var dadC = params[4];
-        var bfC = params[5];
-        var gfC = params[6];
-        var stageC = params[7];
-        var fadeTime = params[8];
+        var dadA = p[0];
+        var bfA = p[1];
+        var gfA = p[2];
+        var stageA = p[3];
+        var dadC = p[4];
+        var bfC = p[5];
+        var gfC = p[6];
+        var stageC = p[7];
+        var t = (p[8] == 0) ? 0.001 : (Conductor.stepCrochet/1000) * p[8];
+        var tw = CoolUtil.flxeaseFromString(p[9], p[10]);
 
-        setShaderCol(dadShader, dadTog, dadShader.mixValue, dadC, fadeTime);
-        setShaderCol(bfShader, bfTog, bfShader.mixValue, bfC, fadeTime);
-        setShaderCol(stageShader, stageTog, stageShader.mixValue, stageC, fadeTime);
+        colorStage(stageA, stageC, t, tw);
+        if (dad != null) colorChar(dad, dadA, dadC, t, tw);
+        if (bf != null) colorChar(bf, bfA, bfC, t, tw);
+        if (gf != null) colorChar(gf, gfA, gfC, t, tw);
     }
 }
 
-function setShaderCol(shader, toggle, prevVal, color, time) {
-    var coolTable = [((color >> 16) & 0xFF) / 255, ((color >> 8) & 0xFF) / 255, (color & 0xFF) / 255];
-    shader.customColor = coolTable;
+function colorStage(alpha:Float, color:FlxColor, tweenTime:Float, tweenEase:FlxEase) {
+    stageCover.color = color;
+    FlxTween.cancelTweensOf(stageCover);
 
-    if (time == 0) {
-        shader.mixValue = toggle ? 1 : 0;
-    } else {
-        FlxTween.num(prevVal, toggle ? 1 : 0, (Conductor.stepCrochet / 1000) * time, null, function(n:Float) {
-            shader.mixValue = n;
-        });
-    }
+    for (s in stage.stageSprites)
+        if (members.indexOf(s) > members.indexOf(bf))
+            FlxTween.tween(s, { alpha: 1-alpha }, tweenTime, { ease: tweenEase });
+    FlxTween.tween(stageCover, { alpha: alpha }, tweenTime, { ease: tweenEase });
+}
+
+function colorChar(character:Character, alpha:Float, color:FlxColor, tweenTime:Float, tweenEase:FlxEase) {
+    var oldAlpha:Float = 1 - character.colorTransform.redMultiplier;
+    var oldColor:FlxColor = character.colorTransform.color;
+
+    FlxTween.cancelTweensOf(character.colorTransform);
+
+    var targetColor = hexToGoob(color, alpha);
+    var startColor = hexToGoob(oldColor, oldAlpha);
+
+    FlxTween.tween(character.colorTransform, {
+        redMultiplier: 1 - alpha,
+        greenMultiplier: 1 - alpha,
+        blueMultiplier: 1 - alpha,
+        redOffset: Std.int(targetColor[0] * 255),
+        greenOffset: Std.int(targetColor[1] * 255),
+        blueOffset: Std.int(targetColor[2] * 255)
+    }, tweenTime, { ease: tweenEase });
+}
+
+function hexToGoob(color:FlxColor, ?alpha:Float = 1):Array<Float> {
+    return [
+        (((color >> 16) & 0xFF) / 255) * alpha,
+        (((color >> 8) & 0xFF) / 255) * alpha,
+        ((color & 0xFF) / 255) * alpha
+    ];
+}
+
+function getFlxColorFromHex(color:Array<Float>):FlxColor {
+    var r = Std.int(color[0] * 255) & 0xFF;
+    var g = Std.int(color[1] * 255) & 0xFF;
+    var b = Std.int(color[2] * 255) & 0xFF;
+    return (r << 16) | (g << 8) | b;
 }
