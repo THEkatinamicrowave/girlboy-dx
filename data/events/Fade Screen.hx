@@ -1,7 +1,7 @@
 //
 var screenBox:FunkinSprite;
 
-var startDead:Bool;
+var startAlpha:Bool;
 var startColor:FlxColor;
 var startOlapping:Bool;
 
@@ -10,58 +10,41 @@ function postCreate() {
     screenBox.cameras = [camHUD];
 
     if (SONG.meta.customValues != null) {
-        if (SONG.meta.customValues.startDead != null) {
-            screenBox.alpha = (SONG.meta.customValues.startDead == "true") ? 1 : 0;
-        } else {
-            screenBox.alpha = 0;
-        }
+        screenBox.alpha = (SONG.meta.customValues.startAlpha != null) ? SONG.meta.customValues.startAlpha : 0;
+        screenBox.color = (SONG.meta.customValues.startColor != null) ? SONG.meta.customValues.startColor : 0xFF000000;
 
-        if (SONG.meta.customValues.startColor != null) {
-            screenBox.color = SONG.meta.customValues.startColor;
-        } else {
-            screenBox.color = 0xFF000000;
-        }
-
-        if (SONG.meta.customValues.startOlapping != null) {
-            if (SONG.meta.customValues.startOlapping == "true")
-                add(screenBox);
-            else 
-                insert(0, screenBox);
-        } else {
+        if (SONG.meta.customValues.startOlapping != null && SONG.meta.customValues.startOlapping == "true")
+            add(screenBox);
+        else 
             insert(0, screenBox);
-        }
     }
 }
 
-function onEvent(event:EventGameEvent) {
-    if (event.event.name == "Fade Screen") {
-        var params = event.event.params;
+function onEvent(_e:EventGameEvent) {
+    var e = _e.event;
+    if (e.name == "Fade Screen") {
+        var p = e.params;
 
-        var tog = params[0];
-        var col = params[1];
-        var dur = params[2];
-        var olaps = params[3];
-        var tEase = params[4];
-        var tDir = params[5];
+        var a = p[0];
+        var c = p[1];
+        var d = p[2] == 0 ? 0.001 : p[2];
+        var o = p[3];
+        var te = p[4];
+        var td = p[5];
 
-        fadeScreen(tog, col, dur, olaps, (tEase != "linear") ? tEase + tDir : tEase);
+        fadeScreen(a, c, d, o, CoolUtil.flxeaseFromString(te, td));
     }
 }
 
-function fadeScreen(toggle:Bool, color:FlxColor, duration:Float, overlapping:Bool, tweenEase:String) {
+function fadeScreen(alpha:Float, color:FlxColor, duration:Float, overlapping:Bool, tweenEase:FlxEase) {
     var firstColor:FlxColor = screenBox.color;
     var firstAlpha:Float = screenBox.alpha;
 
     remove(screenBox);
     if (overlapping) add(screenBox); else insert(0, screenBox);
 
-    if (duration != 0) {
-        FlxTween.color(screenBox, (Conductor.stepCrochet / 1000) * duration, firstColor, color, { ease: Reflect.field(FlxEase, tweenEase) });
-        FlxTween.num(firstAlpha, toggle ? 1 : 0, (Conductor.stepCrochet / 1000) * duration, { ease: Reflect.field(FlxEase, tweenEase) }, function(val:Float) {
-            screenBox.alpha = val;
-        });
-    } else {
-        screenBox.alpha = toggle ? 1 : 0;
-        screenBox.color = color;
-    }
+    FlxTween.color(screenBox, (Conductor.stepCrochet/1000) * duration, firstColor, color, { ease: tweenEase });
+    FlxTween.num(firstAlpha, alpha, (Conductor.stepCrochet/1000) * duration, { ease: tweenEase }, (v:Float) -> {
+        screenBox.alpha = v;
+    });
 }

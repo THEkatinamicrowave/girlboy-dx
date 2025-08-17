@@ -1,9 +1,9 @@
 {
     "params": [
         {
-            "name": "Toggle",
-            "type": "Bool",
-            "defaultValue": true
+            "name": "Fade Alpha",
+            "type": "Float(0, 9999, 0.001, 3)",
+            "defaultValue": 1
         },
         {
             "name": "Fade Color",
@@ -11,8 +11,8 @@
             "defaultValue": "#000000"
         },
         {
-            "name": "Fade Duration (in steps)",
-            "type": "Int(0, 9999)",
+            "name": "Tween Time (Steps)",
+            "type": "Float(0, 9999, 0.01, 2)",
             "defaultValue": 4
         },
         {
@@ -21,14 +21,14 @@
             "defaultValue": false
         },
         {
-            "name": "Fade Tween Type",
-            "type": "DropDown('back', 'bounce', 'circ', 'cube', 'elastic', 'expo', 'linear', 'quad', 'quart', 'quint', 'sine', 'smoothStep', 'smootherStep')",
-            "defaultValue": "linear"
-        },
-        {
-            "name": "Fade Tween Direction",
-            "type": "DropDown('In', 'Out', 'InOut')",
-            "defaultValue": "InOut"
-        }
+			"name": "Tween Ease (ex: circ, quad, cube)",
+			"type": "DropDown('linear', 'back', 'bounce', 'circ', 'cube', 'elastic', 'expo', 'quad', 'quart', 'quint', 'sine', 'smoothStep', 'smootherStep')",
+			"defaultValue": "linear"
+		},
+		{
+			"name": "Tween Type (excluded if CLASSIC or linear, ex: InOut)",
+			"type": "DropDown('In', 'Out', 'InOut')",
+			"defaultValue": "In"
+		}
     ]
 }

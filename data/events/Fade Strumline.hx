@@ -1,26 +1,23 @@
 //
-function onEvent(event:EventGameEvent) {
-    if (event.event.name == "Fade Strumline") {
-        var params = event.event.params;
+function onEvent(_e:EventGameEvent) {
+    var e = _e.event;
+    if (e.name == "Fade Strumline") {
+        var p = e.params;
 
-        var sl = params[0];
-        var alpha = params[1];
-        var time = params[2];
-        var type = params[3];
-        var dir = params[4];
+        var s = p[0];
+        var a = p[1];
+        var t = p[2] == 0 ? 0.001 : p[2];
+        var tt = p[3];
+        var td = p[4];
 
-        var td:FlxEase = Reflect.field(FlxEase, (type != "linear") ? type + dir : type);
-        if (time == 0) time = 0.001;
-
-        fadeStrumline(sl, alpha, time, td);
+        fadeStrumline(s, a, t, CoolUtil.flxeaseFromString(tt, td));
     }
 }
 
-function fadeStrumline(sl:Int, alpha:Float, time:Float, td:FlxEase) {    
-    for (s in strumLines.members[sl].members) {
-        FlxTween.tween(s, { alpha: alpha }, (Conductor.stepCrochet / 1000) * time, { ease: td });
-    }
-    for (s in strumLines.members[sl].notes) {
-        FlxTween.tween(s, { alpha: alpha }, (Conductor.stepCrochet / 1000) * time, { ease: td });
-    }
+function fadeStrumline(strLine:Int, alpha:Float, time:Float, tweenEase:FlxEase) {    
+    for (s in strumLines.members[strLine].members)
+        FlxTween.tween(s, { alpha: alpha }, (Conductor.stepCrochet/1000) * time, { ease: tweenEase });
+
+    for (s in strumLines.members[strLine].notes)
+        FlxTween.tween(s, { alpha: alpha }, (Conductor.stepCrochet/1000) * time, { ease: tweenEase });
 }
