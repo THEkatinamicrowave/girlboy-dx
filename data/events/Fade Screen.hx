@@ -22,18 +22,17 @@ function postCreate() {
 
 function onEvent(_e:EventGameEvent) {
 	var e = _e.event;
-	if (e.name == "Fade Screen") {
-		var p = e.params;
+	if (e.name != "Fade Screen") return;
 
-		var a = p[0];
-		var c = p[1];
-		var d = p[2] == 0 ? 0.001 : p[2];
-		var o = p[3];
-		var te = p[4];
-		var td = p[5];
+	var p = e.params,
+		a = p[0],
+		c = p[1],
+		d = p[2] == 0 ? 0.001 : p[2],
+		o = p[3],
+		te = p[4],
+		td = p[5];
 
-		fadeScreen(a, c, d, o, CoolUtil.flxeaseFromString(te, td));
-	}
+	fadeScreen(a, c, d, o, CoolUtil.flxeaseFromString(te, td));
 }
 
 function fadeScreen(alpha:Float, color:FlxColor, duration:Float, overlapping:Bool, tweenEase:FlxEase) {

@@ -18,17 +18,17 @@ function onEvent(_e:EventGameEvent) {
 	var e = _e.event;
 	if (e.name != "Bad Apple") return;
 
-	var p = e.params;
-	var dadA = p[0];
-	var bfA = p[1];
-	var gfA = p[2];
-	var stageA = p[3];
-	var dadC = p[4];
-	var bfC = p[5];
-	var gfC = p[6];
-	var stageC = p[7];
-	var t = (p[8] == 0) ? 0.001 : (Conductor.stepCrochet/1000) * p[8];
-	var tw = CoolUtil.flxeaseFromString(p[9], p[10]);
+	var p = e.params,
+		dadA = p[0],
+		bfA = p[1],
+		gfA = p[2],
+		stageA = p[3],
+		dadC = p[4],
+		bfC = p[5],
+		gfC = p[6],
+		stageC = p[7],
+		t = (p[8] == 0) ? 0.001 : (Conductor.stepCrochet/1000) * p[8],
+		tw = CoolUtil.flxeaseFromString(p[9], p[10]);
 
 	colorStage(stageA, stageC, t, tw);
 	if (dad != null) colorChar(dad, dadA, dadC, t, tw);

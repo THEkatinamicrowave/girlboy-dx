@@ -1,5 +1,6 @@
 //
 import flixel.text.FlxText.FlxTextBorderStyle;
+
 var subtitles:FunkinText;
 
 function postCreate() {
@@ -12,17 +13,17 @@ function postCreate() {
 function onEvent(_e:EventGameEvent) {
 	var e = _e.event;
 	if (e.name != "Subtitles") return;
-	var p = e.params;
-	
-	var co = p[0];
-	var ctr = p[1];
-	var t = p[2];
-	var as = p[3];
-	var f = p[4];
-	var s = p[5];
-	var c = p[6];
-	var tf = p[7];
-	var da = p[8];
+
+	var p = e.params,
+		co = p[0],
+		ctr = p[1],
+		t = p[2],
+		as = p[3],
+		f = p[4],
+		s = p[5],
+		c = p[6],
+		tf = p[7],
+		da = p[8];
 
 	setSubs(co, ctr, (as ? " " : "") + t, f, s, c, tf, da);
 }
