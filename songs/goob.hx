@@ -29,29 +29,28 @@ function postCreate() {
 }
 
 function postUpdate(elapsed:Float) {
-	if (Conductor.songPosition > 0) {
-		for (strum in strumLines.members) {
-			var propPos:FlxObject = switch (strum.data.type) {
-				case 0: dadPos;
-				case 1: bfPos;
-				case 2: gfPos;
-			};
-			var propScale:FlxPoint = switch (strum.data.type) {
-				case 0: dadScale;
-				case 1: bfScale;
-				case 2: gfScale;
-			};
+	if (Conductor.songPosition <= 0) return;
+
+	for (strum in strumLines.members) {
+		var propPos:FlxObject = switch (strum.data.type) {
+			case 0: dadPos;
+			case 1: bfPos;
+			case 2: gfPos;
+		};
+		var propScale:FlxPoint = switch (strum.data.type) {
+			case 0: dadScale;
+			case 1: bfScale;
+			case 2: gfScale;
+		};
 	
-			for (c in strum.characters) {
-				if (c.curCharacter != "exe") {  
-					if (c.animation.name == "idle" || c.animation.name == "danceLeft" || c.animation.name == "danceRight")
-						scaleSkewSprite(c, propPos, propScale, 0, 1, 1);
-					else
-						scaleSkewSprite(c, propPos, propScale, CoolUtil.fpsLerp(c.skew.x, 0, 0.1), CoolUtil.fpsLerp(c.scale.x, propScale.x, 0.1), CoolUtil.fpsLerp(c.scale.y, propScale.y, 0.1));
-				} else {
-					scaleSkewSprite(c, propPos, propScale, 0, 1, 1);
-				}
-			}
+		for (c in strum.characters) {
+			if (c.curCharacter == "exe") scaleSkewSprite(c, propPos, propScale, 0, 1, 1);
+			return;
+			
+			if (c.animation.name == "idle" || c.animation.name == "danceLeft" || c.animation.name == "danceRight")
+				scaleSkewSprite(c, propPos, propScale, 0, 1, 1);
+			else
+				scaleSkewSprite(c, propPos, propScale, CoolUtil.fpsLerp(c.skew.x, 0, 0.1), CoolUtil.fpsLerp(c.scale.x, propScale.x, 0.1), CoolUtil.fpsLerp(c.scale.y, propScale.y, 0.1));
 		}
 	}
 }
@@ -68,13 +67,13 @@ function onNoteHit(event:NoteHitEvent) {
 		case 2: gfScale;
 	};
 
-	if (!event.note.isSustainNote && event.character.curCharacter != "exe") {
-		switch (event.note.strumID) {
-			case 0: scaleSkewSprite(event.character, propPos, propScale, 5, 1, 1);
-			case 1: scaleSkewSprite(event.character, propPos, propScale, 0, 1.1, 0.9);
-			case 2: scaleSkewSprite(event.character, propPos, propScale, 0, 0.9, 1.1);
-			case 3: scaleSkewSprite(event.character, propPos, propScale, -5, 1, 1);
-		}
+	if (event.note.isSustainNote || event.character.curCharacter == "exe") return;
+	
+	switch (event.note.strumID) {
+		case 0: scaleSkewSprite(event.character, propPos, propScale, 5, 1, 1);
+		case 1: scaleSkewSprite(event.character, propPos, propScale, 0, 1.1, 0.9);
+		case 2: scaleSkewSprite(event.character, propPos, propScale, 0, 0.9, 1.1);
+		case 3: scaleSkewSprite(event.character, propPos, propScale, -5, 1, 1);
 	}
 }
 
@@ -86,7 +85,3 @@ function scaleSkewSprite(sprite:FlxSprite, sPos:FlxPoint, sScale:FlxPoint, skew:
 		sPos.y + (sScale.y * sprite.height * (1 - scaleY) / 2)
 	);
 }
-
-// function onPlayerMiss(event:NoteMissEvent) {
-//	 event.character.skew.set((Math.random() * 178) - 89, (Math.random() * 178) - 89);
-// }
