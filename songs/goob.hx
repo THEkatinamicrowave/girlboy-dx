@@ -44,13 +44,13 @@ function postUpdate(elapsed:Float) {
 		};
 	
 		for (c in strum.characters) {
-			if (c.curCharacter == "exe") scaleSkewSprite(c, propPos, propScale, 0, 1, 1);
-			return;
 			
-			if (c.animation.name == "idle" || c.animation.name == "danceLeft" || c.animation.name == "danceRight")
+			if (c.lastAnimContext == "DANCE")
 				scaleSkewSprite(c, propPos, propScale, 0, 1, 1);
 			else
 				scaleSkewSprite(c, propPos, propScale, CoolUtil.fpsLerp(c.skew.x, 0, 0.1), CoolUtil.fpsLerp(c.scale.x, propScale.x, 0.1), CoolUtil.fpsLerp(c.scale.y, propScale.y, 0.1));
+
+			// if (c.curCharacter == "exe") scaleSkewSprite(c, propPos, propScale, 0, 1, 1);
 		}
 	}
 }
@@ -74,7 +74,7 @@ function onNoteHit(event:NoteHitEvent) {
 		case 1: scaleSkewSprite(event.character, propPos, propScale, 0, 1.1, 0.9);
 		case 2: scaleSkewSprite(event.character, propPos, propScale, 0, 0.9, 1.1);
 		case 3: scaleSkewSprite(event.character, propPos, propScale, -5, 1, 1);
-	}
+	}	
 }
 
 function scaleSkewSprite(sprite:FlxSprite, sPos:FlxPoint, sScale:FlxPoint, skew:Float, scaleX:Float, scaleY:Float) {
