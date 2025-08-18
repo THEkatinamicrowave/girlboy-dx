@@ -20,9 +20,7 @@ function postCreate() {
 
 	remove(characterSprites);
 	remove(weekSprites);
-	for(e in [blackBar, scoreText, weekTitle, weekBG, tracklist, leftArrow, rightArrow]) {
-		remove(e);
-	}
+	for(e in [blackBar, scoreText, weekTitle, weekBG, tracklist, leftArrow, rightArrow]) remove(e);
 
 	sky = new FlxSprite().loadGraphic(Paths.image(path + "sky"));
 	sky.scale.set(0.7, 0.7);
@@ -88,7 +86,7 @@ function postCreate() {
 	changeDifficulty(0, true);
 }
 
-function postUpdate(elapsed:Float) {
+function postUpdate(elapsed:Float)
 	switch weeks[curWeek].name.toLowerCase() {
 		case "breadsticks":
 			sky.setPosition(CoolUtil.fpsLerp(sky.x, 111.6, 0.08), CoolUtil.fpsLerp(sky.y, 49, 0.08));
@@ -101,7 +99,6 @@ function postUpdate(elapsed:Float) {
 			song1egg.setPosition(CoolUtil.fpsLerp(song1egg.x, -61, 0.08), CoolUtil.fpsLerp(song1egg.y, 137.5, 0.08));
 			song2building.setPosition(CoolUtil.fpsLerp(song2building.x, 171, 0.08), CoolUtil.fpsLerp(song2building.y, 58.3, 0.08));
 	}
-}
 
 function onChangeDifficulty(event:MenuChangeEvent) {
 	for (e in difficultySprites) {
@@ -122,25 +119,25 @@ function onChangeDifficulty(event:MenuChangeEvent) {
 }
 
 function onChangeWeek(event:MenuChangeEvent) {
-	if (song1egg != null && song2building != null) {
-		switch weeks[event.value].name.toLowerCase() {
-			case "breadsticks":
-				song1egg.animation.play("idle");
-				song2building.animation.play("high");
+	if (song1egg == null || song2building == null) return;
+
+	switch weeks[event.value].name.toLowerCase() {
+		case "breadsticks":
+			song1egg.animation.play("idle");
+			song2building.animation.play("high");
 	
-				song1egg.offset.set(89, 135);
-				song2building.offset.set(49, 65);
-			case "weaponry":
-				song1egg.animation.play("high");
-				song2building.animation.play("idle");
+			song1egg.offset.set(89, 135);
+			song2building.offset.set(49, 65);
+		case "weaponry":
+			song1egg.animation.play("high");
+			song2building.animation.play("idle");
 				
-				song1egg.offset.set(92.25, 139);
-				song2building.offset.set(43, 57);
-		}
+			song1egg.offset.set(92.25, 139);
+			song2building.offset.set(43, 57);
 	}
 }
 
-function onWeekSelect(event:WeekSelectEvent) {
+function onWeekSelect(event:WeekSelectEvent)
 	switch weeks[curWeek].name.toLowerCase() {
 		case "breadsticks":
 			song2building.animation.play("select");
@@ -149,4 +146,3 @@ function onWeekSelect(event:WeekSelectEvent) {
 			song1egg.animation.play("select");
 			song1egg.offset.set(89, 135);
 	}
-}
