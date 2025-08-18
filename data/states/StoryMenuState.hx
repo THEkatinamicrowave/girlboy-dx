@@ -59,28 +59,25 @@ function postCreate() {
 	song2building.setPosition(65, 100);
 	song2building.antialiasing = true;
 	insert(members.indexOf(bg), song2building);
+	
+	arrowl = new FlxSprite().loadGraphic(Paths.image(shitpath + "arrow"));
+	arrowr = new FlxSprite().loadGraphic(Paths.image(shitpath + "arrow"));
 
-	arrowl = new FlxSprite().loadGraphic(Paths.image(shitpath + "arrowl"));
-	arrowr = new FlxSprite().loadGraphic(Paths.image(shitpath + "arrowr"));
-
-	arrowl.frames = Paths.getFrames(shitpath + "arrowl");
-	arrowr.frames = Paths.getFrames(shitpath + "arrowr");
-
-	for(arrow in [arrowl, arrowr]) {
+	for(i=>arrow in [arrowl, arrowr]) {
+		arrow.frames = Paths.getFrames(shitpath + "arrow");
 		arrow.scale.set(0.5, 0.5);
 		arrow.updateHitbox();
 		arrow.animation.addByPrefix('idle', 'idle');
 		arrow.animation.addByPrefix('move', 'move', 24, false);
 		arrow.animation.play('idle');
 		arrow.antialiasing = true;
+		arrow.y = 450;
+		arrow.flipX = i == 1;
 		add(arrow);
 	}
 
 	arrowl.x = difficultySprites[weeks[curWeek].difficulties[curDifficulty].toLowerCase()].x - arrowl.width + 50;
 	arrowr.x = difficultySprites[weeks[curWeek].difficulties[curDifficulty].toLowerCase()].x + difficultySprites[weeks[curWeek].difficulties[curDifficulty].toLowerCase()].width - 50;
-
-	arrowl.y = 450;
-	arrowr.y = 450;
 
 	changeWeek(0, true);
 	changeDifficulty(0, true);
@@ -107,8 +104,7 @@ function onChangeDifficulty(event:MenuChangeEvent) {
 	}
 
 	switch event.change {
-		default:
-			return;
+		default: return;
 		case -1:
 			arrowl.animation.stop();
 			arrowl.animation.play("move");
@@ -144,5 +140,5 @@ function onWeekSelect(event:WeekSelectEvent)
 			song2building.offset.set(43, 57);
 		case "weaponry":
 			song1egg.animation.play("select");
-			song1egg.offset.set(89, 135);
+			song1egg.offset.set(89, 135); // I'm sorry, I can't make this softcoded; this is as good as we're gonna get
 	}
