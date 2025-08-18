@@ -1,8 +1,6 @@
 //
 var codestring:String = "";
 
-function postCreate() codestring = "";
-
 function postUpdate(elapsed:Float) {
 	if (FlxG.keys.justPressed.R) codestring += "R";
 	if (FlxG.keys.justPressed.U) codestring += "U";
