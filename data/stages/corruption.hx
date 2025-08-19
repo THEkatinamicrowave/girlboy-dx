@@ -29,15 +29,8 @@ function postUpdate(elapsed:Float) {
 	var targetRoomL = roomsCentrePoint.x - halfSeparation - roomL.width;
 	var targetRoomR = roomsCentrePoint.x + halfSeparation;
 
-	trace("halfSeparation", halfSeparation);
-	trace("targetRoomL", targetRoomL);
-	trace("targetRoomR", targetRoomR);
-
 	roomL.x = CoolUtil.fpsLerp(roomL.x, targetRoomL, lerping ? 0.16 : 1);
 	roomR.x = CoolUtil.fpsLerp(roomR.x, targetRoomR, lerping ? 0.16 : 1);
-
-	trace("roomL.x", roomL.x);
-	trace("roomR.x", roomR.x);
 	
 	for (s=>arr in psmm) {
 		for (entry in arr) {
@@ -68,7 +61,6 @@ function onEvent(_e:EventGameEvent) {
 			lerping = true;
 		}}, (v:Float)->{
 			sideSeparation = v;
-			trace("sideSeparation", sideSeparation);
 		});
 	} else {
 		lerping = true;
