@@ -7,7 +7,7 @@ function postUpdate(elapsed:Float) {
     if (FlxG.keys.firstJustPressed() != -1) {
         var kInt = FlxG.keys.firstJustPressed();
         var k = FlxKey.toStringMap.get(kInt);
-        var extras = [
+        var supportedCharList = [
             "A" => "A",
             "B" => "B",
             "C" => "C",
@@ -53,12 +53,7 @@ function postUpdate(elapsed:Float) {
             "SLASH" => "/",
             "MINUS" => "-"
         ];
-        if (extras.exists(k)) {
-            k = extras.get(k);
-        
-            codeString += k;
-            trace(codeString);
-        }
+        if (supportedCharList.exists(k)) codeString += supportedCharList.get(k);
     }
 
     if (codeString.toLowerCase() == "runkillprgm.exe") {
