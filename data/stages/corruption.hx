@@ -6,6 +6,7 @@ import Sys;
 var roomsCentrePoint:FlxPoint;
 
 var shakeIntensity:Float = 0,
+	elapsedTimer:Float = 0,
 	lerping:Bool = true,
 	sideSeparation:Float = 182;
 
@@ -41,8 +42,9 @@ function postUpdate(elapsed:Float) {
 	hitboxL.x = CoolUtil.fpsLerp(hitboxL.x, targetRoomL, lerping ? 0.16 : 1);
 	hitboxR.x = CoolUtil.fpsLerp(hitboxR.x, targetRoomR, lerping ? 0.16 : 1);
 	
-	var t = Sys.time()/2;
-	var radius = 32;
+	elapsedTimer += elapsed;
+	var t = elapsedTimer / (2 - (0.08 * shakeIntensity));
+	var radius = 32 + (3.2*shakeIntensity);
 
 	var xL = hitboxL.x + radius * Math.cos(t) / (1 + Math.sin(t) * Math.sin(t));
 	var yL = hitboxL.y + radius * Math.cos(t) * Math.sin(t) / (1 + Math.sin(t) * Math.sin(t));
@@ -54,17 +56,17 @@ function postUpdate(elapsed:Float) {
 	roomL.setPosition(xL, yL);
 	roomR.setPosition(xR, yR);
 
-	roomL.x = CoolUtil.fpsLerp(roomL.x, xL + FlxG.random.float(-2, 2)*shakeIntensity, 0.04*shakeIntensity);
-	roomL.y = CoolUtil.fpsLerp(roomL.y, yL + FlxG.random.float(-2, 2)*shakeIntensity, 0.04*shakeIntensity);
+	roomL.x = CoolUtil.fpsLerp(roomL.x, xL + FlxG.random.float(-2, 2)*shakeIntensity, 0.07*shakeIntensity);
+	roomL.y = CoolUtil.fpsLerp(roomL.y, yL + FlxG.random.float(-2, 2)*shakeIntensity, 0.07*shakeIntensity);
 	
-	roomR.x = CoolUtil.fpsLerp(roomR.x, xR + FlxG.random.float(-2, 2)*shakeIntensity, 0.04*shakeIntensity);
-	roomR.y = CoolUtil.fpsLerp(roomR.y, yR + FlxG.random.float(-2, 2)*shakeIntensity, 0.04*shakeIntensity);
+	roomR.x = CoolUtil.fpsLerp(roomR.x, xR + FlxG.random.float(-2, 2)*shakeIntensity, 0.07*shakeIntensity);
+	roomR.y = CoolUtil.fpsLerp(roomR.y, yR + FlxG.random.float(-2, 2)*shakeIntensity, 0.07*shakeIntensity);
 	
 	for (s=>arr in psmm) {
 		for (entry in arr) {
 			var isCharacter = Type.getClass(s) == Character;
-			s.x = CoolUtil.fpsLerp(s.x, entry.relativePos.x + entry.sprite.x, isCharacter ? 1 : 0.06);
-			s.y = CoolUtil.fpsLerp(s.y, entry.relativePos.y + entry.sprite.y, isCharacter ? 1 : 0.06);
+			s.x = CoolUtil.fpsLerp(s.x, entry.relativePos.x + entry.sprite.x, isCharacter ? 1 : 0.06 + 0.03*shakeIntensity);
+			s.y = CoolUtil.fpsLerp(s.y, entry.relativePos.y + entry.sprite.y, isCharacter ? 1 : 0.06 + 0.03*shakeIntensity);
 		}
 	}
 }
@@ -98,13 +100,11 @@ function onEvent(_e:EventGameEvent) {
 			var p = e.params;
 			var i = p[0];
 			var tt = p[1] == 0 ? 0.001 : p[1];
-			var te = flxeaseFromString(p[2], p[3]);
+			var te = CoolUtil.flxeaseFromString(p[2], p[3]);
 
 			var initialVal = shakeIntensity;
-			FlxTween.num(initialVal, i, tt, { ease: te }, (v:Float)->{
+			FlxTween.num(initialVal, i, (Conductor.stepCrochet/1000) * tt, { ease: te }, (v:Float)->{
 				shakeIntensity = v;
 			});
 	}
-	
-	
 }
