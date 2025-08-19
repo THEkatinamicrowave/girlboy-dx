@@ -1,6 +1,7 @@
 //
 import flixel.FlxObject;
 import Type;
+import Sys;
 
 var roomsCentrePoint:FlxPoint;
 
@@ -8,12 +9,20 @@ var moveSpeed:Float = 0.5,
 	lerping:Bool = true,
 	sideSeparation:Float = 182;
 
-var psmm:Map<FlxObject, Array<{sprite:FlxSprite, relativePos:FlxPoint}>>; // proportionalSpriteMovementMap
+var psmm:Map<FlxSprite, Array<{sprite:FlxSprite, relativePos:FlxPoint}>>; // proportionalSpriteMovementMap
+
+var hitboxL:FlxObject,
+	hitboxR:FlxObject;
 
 function postCreate() {
+	hitboxL = new FlxObject(roomL.x, roomL.y, roomL.width, roomL.height);
+	hitboxR = new FlxObject(roomR.x, roomR.y, roomR.width, roomR.height);
+	add(hitboxL);
+	add(hitboxR);
+
 	roomsCentrePoint = FlxPoint.get(
-		roomL.x + (((roomR.x + roomR.width) - roomL.x) / 2),
-		((roomL.y + (roomL.height/2)) + (roomR.y + (roomR.height/2))) / 2
+		hitboxL.x + (((hitboxR.x + hitboxR.width) - hitboxL.x) / 2),
+		((hitboxL.y + (hitboxL.height/2)) + (hitboxR.y + (hitboxR.height/2))) / 2
 	);
 
 	psmm = [
@@ -29,8 +38,21 @@ function postUpdate(elapsed:Float) {
 	var targetRoomL = roomsCentrePoint.x - halfSeparation - roomL.width;
 	var targetRoomR = roomsCentrePoint.x + halfSeparation;
 
-	roomL.x = CoolUtil.fpsLerp(roomL.x, targetRoomL, lerping ? 0.16 : 1);
-	roomR.x = CoolUtil.fpsLerp(roomR.x, targetRoomR, lerping ? 0.16 : 1);
+	hitboxL.x = CoolUtil.fpsLerp(hitboxL.x, targetRoomL, lerping ? 0.16 : 1);
+	hitboxR.x = CoolUtil.fpsLerp(hitboxR.x, targetRoomR, lerping ? 0.16 : 1);
+	
+	var t = Sys.time()/2;
+	var radius = 32;
+
+	var xL = hitboxL.x + radius * Math.cos(t) / (1 + Math.sin(t) * Math.sin(t));
+	var yL = hitboxL.y + radius * Math.cos(t) * Math.sin(t) / (1 + Math.sin(t) * Math.sin(t));
+
+	var tR = t + 0.7; // desync
+	var xR = hitboxR.x + radius * Math.cos(tR + Math.PI) / (1 + Math.sin(tR + Math.PI) * Math.sin(tR + Math.PI));
+	var yR = hitboxR.y + radius * Math.cos(tR + Math.PI) * Math.sin(tR + Math.PI) / (1 + Math.sin(tR + Math.PI) * Math.sin(tR + Math.PI));
+
+	roomL.setPosition(xL, yL);
+	roomR.setPosition(xR, yR);
 	
 	for (s=>arr in psmm) {
 		for (entry in arr) {

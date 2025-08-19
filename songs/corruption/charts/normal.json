@@ -42,7 +42,7 @@
 		{
 			"params": [
 				true,
-				0.8,
+				0.65,
 				"camGame",
 				111,
 				"cube",
@@ -52,6 +52,16 @@
 			],
 			"time": 111.111111111111,
 			"name": "Camera Zoom"
+		},
+		{
+			"params": [
+				500,
+				0,
+				"linear",
+				"In"
+			],
+			"time": 222.222222222222,
+			"name": "Corruption Stage Gap Size"
 		},
 		{
 			"params": [
@@ -98,6 +108,16 @@
 			],
 			"time": 35555.5555555556,
 			"name": "Camera Zoom"
+		},
+		{
+			"params": [
+				700,
+				16,
+				"sine",
+				"InOut"
+			],
+			"time": 37333.3333333333,
+			"name": "Corruption Stage Gap Size"
 		},
 		{
 			"params": [
@@ -180,6 +200,16 @@
 			],
 			"name": "Fade Screen",
 			"time": 42763.4408602151
+		},
+		{
+			"params": [
+				-250,
+				1,
+				"linear",
+				"In"
+			],
+			"time": 43827.9569892473,
+			"name": "Corruption Stage Gap Size"
 		},
 		{
 			"params": [
@@ -537,6 +567,16 @@
 		},
 		{
 			"params": [
+				100,
+				1,
+				"linear",
+				"In"
+			],
+			"time": 45666.6666666667,
+			"name": "Corruption Stage Gap Size"
+		},
+		{
+			"params": [
 				0,
 				0,
 				0,
@@ -586,7 +626,11 @@
 		},
 		{
 			"params": [
-				0
+				0,
+				true,
+				4,
+				"CLASSIC",
+				"In"
 			],
 			"time": 58150.5376344086,
 			"name": "Camera Movement"
@@ -597,6 +641,16 @@
 			],
 			"time": 58150.5376344086,
 			"name": "BPM Change"
+		},
+		{
+			"params": [
+				50,
+				4,
+				"CLASSIC",
+				"In"
+			],
+			"time": 58150.5376344086,
+			"name": "Corruption Stage Gap Size"
 		},
 		{
 			"params": [
@@ -614,7 +668,11 @@
 		},
 		{
 			"params": [
-				0
+				0,
+				true,
+				4,
+				"CLASSIC",
+				"In"
 			],
 			"time": 70150.5376344087,
 			"name": "Camera Movement"
@@ -644,6 +702,16 @@
 		},
 		{
 			"params": [
+				300,
+				0,
+				"linear",
+				"In"
+			],
+			"time": 70150.5376344087,
+			"name": "Corruption Stage Gap Size"
+		},
+		{
+			"params": [
 				0.2,
 				"camGame"
 			],
@@ -652,8 +720,20 @@
 		},
 		{
 			"params": [
+				200,
+				4,
+				"CLASSIC",
+				"In"
+			],
+			"time": 70877.8103616813,
+			"name": "Corruption Stage Gap Size"
+		},
+		{
+			"params": [
 				1,
-				1
+				1,
+				"BEAT",
+				0
 			],
 			"name": "Camera Modulo Change",
 			"time": 71605.0830889541
@@ -668,11 +748,31 @@
 		},
 		{
 			"params": [
+				150,
+				4,
+				"CLASSIC",
+				"In"
+			],
+			"time": 71605.0830889541,
+			"name": "Corruption Stage Gap Size"
+		},
+		{
+			"params": [
 				0.2,
 				"camGame"
 			],
 			"name": "Add Camera Zoom",
 			"time": 71968.7194525904
+		},
+		{
+			"params": [
+				75,
+				4,
+				"CLASSIC",
+				"In"
+			],
+			"time": 71968.7194525904,
+			"name": "Corruption Stage Gap Size"
 		},
 		{
 			"params": [
@@ -684,6 +784,16 @@
 		},
 		{
 			"params": [
+				0,
+				4,
+				"CLASSIC",
+				"In"
+			],
+			"time": 72332.3558162268,
+			"name": "Corruption Stage Gap Size"
+		},
+		{
+			"params": [
 				0.2,
 				"camGame"
 			],
@@ -692,11 +802,31 @@
 		},
 		{
 			"params": [
+				-75,
+				4,
+				"CLASSIC",
+				"In"
+			],
+			"time": 72514.173998045,
+			"name": "Corruption Stage Gap Size"
+		},
+		{
+			"params": [
 				0.2,
 				"camGame"
 			],
 			"time": 72695.9921798632,
 			"name": "Add Camera Zoom"
+		},
+		{
+			"params": [
+				-150,
+				4,
+				"CLASSIC",
+				"In"
+			],
+			"time": 72695.9921798632,
+			"name": "Corruption Stage Gap Size"
 		},
 		{
 			"params": [
@@ -733,6 +863,16 @@
 		},
 		{
 			"params": [
+				182,
+				4,
+				"CLASSIC",
+				"In"
+			],
+			"time": 73059.6285434995,
+			"name": "Corruption Stage Gap Size"
+		},
+		{
+			"params": [
 				false
 			],
 			"name": "Cool Strumlines",
@@ -740,7 +880,11 @@
 		},
 		{
 			"params": [
-				1
+				1,
+				true,
+				4,
+				"CLASSIC",
+				"In"
 			],
 			"time": 75968.7194525905,
 			"name": "Camera Movement"
@@ -763,6 +907,16 @@
 		},
 		{
 			"params": [
+				-100,
+				0,
+				"linear",
+				"In"
+			],
+			"time": 75968.7194525905,
+			"name": "Corruption Stage Gap Size"
+		},
+		{
+			"params": [
 				0.2,
 				"camGame"
 			],
@@ -771,8 +925,20 @@
 		},
 		{
 			"params": [
+				0,
+				4,
+				"CLASSIC",
+				"In"
+			],
+			"time": 76695.9921798632,
+			"name": "Corruption Stage Gap Size"
+		},
+		{
+			"params": [
 				1,
-				1
+				1,
+				"BEAT",
+				0
 			],
 			"time": 77423.2649071359,
 			"name": "Camera Modulo Change"
@@ -787,11 +953,31 @@
 		},
 		{
 			"params": [
+				-50,
+				4,
+				"CLASSIC",
+				"In"
+			],
+			"time": 77423.2649071359,
+			"name": "Corruption Stage Gap Size"
+		},
+		{
+			"params": [
 				0.2,
 				"camGame"
 			],
 			"time": 77786.9012707722,
 			"name": "Add Camera Zoom"
+		},
+		{
+			"params": [
+				100,
+				4,
+				"CLASSIC",
+				"In"
+			],
+			"time": 77786.9012707722,
+			"name": "Corruption Stage Gap Size"
 		},
 		{
 			"params": [
@@ -803,6 +989,16 @@
 		},
 		{
 			"params": [
+				150,
+				4,
+				"CLASSIC",
+				"In"
+			],
+			"time": 78150.5376344086,
+			"name": "Corruption Stage Gap Size"
+		},
+		{
+			"params": [
 				0.2,
 				"camGame"
 			],
@@ -811,11 +1007,31 @@
 		},
 		{
 			"params": [
+				200,
+				4,
+				"CLASSIC",
+				"In"
+			],
+			"time": 78332.3558162268,
+			"name": "Corruption Stage Gap Size"
+		},
+		{
+			"params": [
 				0.2,
 				"camGame"
 			],
 			"name": "Add Camera Zoom",
 			"time": 78514.173998045
+		},
+		{
+			"params": [
+				275,
+				4,
+				"CLASSIC",
+				"In"
+			],
+			"time": 78514.173998045,
+			"name": "Corruption Stage Gap Size"
 		},
 		{
 			"params": [
@@ -849,6 +1065,16 @@
 			],
 			"time": 78877.8103616813,
 			"name": "Camera Flash"
+		},
+		{
+			"params": [
+				50,
+				4,
+				"CLASSIC",
+				"In"
+			],
+			"time": 78877.8103616813,
+			"name": "Corruption Stage Gap Size"
 		},
 		{
 			"params": [
@@ -894,6 +1120,16 @@
 			],
 			"time": 81786.9012707723,
 			"name": "Camera Zoom"
+		},
+		{
+			"params": [
+				200,
+				4,
+				"CLASSIC",
+				"In"
+			],
+			"time": 81786.9012707723,
+			"name": "Corruption Stage Gap Size"
 		},
 		{
 			"params": [
@@ -1217,6 +1453,16 @@
 		},
 		{
 			"params": [
+				350,
+				4,
+				"CLASSIC",
+				"In"
+			],
+			"time": 104052.44748926,
+			"name": "Corruption Stage Gap Size"
+		},
+		{
+			"params": [
 				1
 			],
 			"time": 109385.780822593,
@@ -1224,7 +1470,11 @@
 		},
 		{
 			"params": [
-				0
+				0,
+				true,
+				4,
+				"CLASSIC",
+				"In"
 			],
 			"time": 114719.114155926,
 			"name": "Camera Movement"
@@ -1241,10 +1491,30 @@
 		},
 		{
 			"params": [
+				150,
+				0,
+				"linear",
+				"In"
+			],
+			"time": 114719.114155926,
+			"name": "Corruption Stage Gap Size"
+		},
+		{
+			"params": [
 				1
 			],
 			"time": 120052.44748926,
 			"name": "Camera Movement"
+		},
+		{
+			"params": [
+				-150,
+				32,
+				"quint",
+				"In"
+			],
+			"time": 122719.114155926,
+			"name": "Corruption Stage Gap Size"
 		},
 		{
 			"params": [
@@ -1281,6 +1551,26 @@
 			],
 			"time": 125385.780822593,
 			"name": "Cinematic Bars"
+		},
+		{
+			"params": [
+				600,
+				0,
+				"linear",
+				"In"
+			],
+			"time": 125385.780822593,
+			"name": "Corruption Stage Gap Size"
+		},
+		{
+			"params": [
+				false,
+				-1,
+				4,
+				"camHUD"
+			],
+			"time": 125385.780822593,
+			"name": "Camera Flash"
 		},
 		{
 			"params": [
@@ -1361,6 +1651,16 @@
 		},
 		{
 			"params": [
+				400,
+				32,
+				"quad",
+				"In"
+			],
+			"time": 136679.898469652,
+			"name": "Corruption Stage Gap Size"
+		},
+		{
+			"params": [
 				1
 			],
 			"name": "Camera Movement",
@@ -1387,6 +1687,26 @@
 		},
 		{
 			"params": [
+				300,
+				0,
+				"linear",
+				"In"
+			],
+			"time": 139422.755612509,
+			"name": "Corruption Stage Gap Size"
+		},
+		{
+			"params": [
+				200,
+				0,
+				"linear",
+				"In"
+			],
+			"time": 139937.041326795,
+			"name": "Corruption Stage Gap Size"
+		},
+		{
+			"params": [
 				1,
 				false,
 				4,
@@ -1425,6 +1745,16 @@
 		},
 		{
 			"params": [
+				100,
+				0,
+				"linear",
+				"In"
+			],
+			"name": "Corruption Stage Gap Size",
+			"time": 140451.32704108
+		},
+		{
+			"params": [
 				1,
 				false,
 				4,
@@ -1445,6 +1775,26 @@
 		{
 			"params": [
 				0,
+				0,
+				"linear",
+				"In"
+			],
+			"time": 140965.612755366,
+			"name": "Corruption Stage Gap Size"
+		},
+		{
+			"params": [
+				-75,
+				0,
+				"linear",
+				"In"
+			],
+			"name": "Corruption Stage Gap Size",
+			"time": 141479.898469652
+		},
+		{
+			"params": [
+				0,
 				false,
 				4,
 				"CLASSIC",
@@ -1460,6 +1810,16 @@
 			],
 			"name": "Add Camera Zoom",
 			"time": 141479.898469652
+		},
+		{
+			"params": [
+				-150,
+				4,
+				"cube",
+				"In"
+			],
+			"time": 141822.755612509,
+			"name": "Corruption Stage Gap Size"
 		},
 		{
 			"params": [
@@ -1530,6 +1890,16 @@
 			],
 			"time": 142165.612755366,
 			"name": "Add Camera Zoom"
+		},
+		{
+			"params": [
+				300,
+				0,
+				"linear",
+				"In"
+			],
+			"time": 142165.612755366,
+			"name": "Corruption Stage Gap Size"
 		},
 		{
 			"params": [
@@ -3337,9 +3707,12 @@
 			"name": "BPM Change"
 		}
 	],
+	"codenameChart": true,
 	"strumLines": [
 		{
 			"keyCount": 4,
+			"strumScale": 1,
+			"position": "dad",
 			"notes": [
 				{
 					"id": 2,
@@ -4045,7 +4418,7 @@
 				},
 				{
 					"id": 0,
-					"sLen": 272.999999999956,
+					"sLen": 272.999999999942,
 					"time": 71605.0830889541,
 					"type": 0
 				},
@@ -4075,7 +4448,7 @@
 				},
 				{
 					"id": 0,
-					"sLen": 272.999999999956,
+					"sLen": 272.999999999942,
 					"time": 72695.9921798632,
 					"type": 0
 				},
@@ -4639,7 +5012,7 @@
 				},
 				{
 					"id": 0,
-					"sLen": 688.000000000044,
+					"sLen": 688.000000000058,
 					"time": 99933.8760606882,
 					"type": 0
 				},
@@ -7854,22 +8227,21 @@
 					"type": 0
 				}
 			],
-			"position": "dad",
-			"strumScale": 1,
-			"visible": true,
-			"type": 0,
 			"characters": [
 				"exe"
 			],
+			"type": 0,
+			"visible": true,
 			"strumPos": [
 				0,
 				50
 			],
-			"strumLinePos": 0.25,
-			"vocalsSuffix": ""
+			"vocalsSuffix": "",
+			"strumLinePos": 0.25
 		},
 		{
 			"keyCount": 4,
+			"position": "boyfriend",
 			"notes": [
 				{
 					"id": 1,
@@ -8551,7 +8923,7 @@
 				},
 				{
 					"id": 0,
-					"sLen": 272.999999999956,
+					"sLen": 272.999999999942,
 					"time": 77423.2649071359,
 					"type": 0
 				},
@@ -8689,7 +9061,7 @@
 				},
 				{
 					"id": 3,
-					"sLen": 272.999999999956,
+					"sLen": 272.999999999942,
 					"time": 81423.2649071359,
 					"type": 0
 				},
@@ -11532,15 +11904,13 @@
 					"type": 0
 				}
 			],
-			"position": "boyfriend",
-			"type": 1,
+			"visible": true,
 			"characters": [
 				"bf"
 			],
-			"visible": true
+			"type": 1
 		}
 	],
-	"codenameChart": true,
 	"scrollSpeed": 3,
 	"chartVersion": "1.6.0",
 	"stage": "corruption",
