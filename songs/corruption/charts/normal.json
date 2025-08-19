@@ -712,7 +712,7 @@
 		},
 		{
 			"params": [
-				300,
+				200,
 				0,
 				"linear",
 				"In"
@@ -730,10 +730,10 @@
 		},
 		{
 			"params": [
-				200,
+				150,
 				4,
-				"CLASSIC",
-				"In"
+				"expo",
+				"Out"
 			],
 			"time": 70877.8103616813,
 			"name": "Corruption Stage Gap Size"
@@ -758,10 +758,10 @@
 		},
 		{
 			"params": [
-				150,
+				100,
 				4,
-				"CLASSIC",
-				"In"
+				"expo",
+				"Out"
 			],
 			"time": 71605.0830889541,
 			"name": "Corruption Stage Gap Size"
@@ -776,10 +776,10 @@
 		},
 		{
 			"params": [
-				75,
+				0,
 				4,
-				"CLASSIC",
-				"In"
+				"expo",
+				"Out"
 			],
 			"time": 71968.7194525904,
 			"name": "Corruption Stage Gap Size"
@@ -794,10 +794,10 @@
 		},
 		{
 			"params": [
-				0,
-				4,
-				"CLASSIC",
-				"In"
+				-50,
+				2,
+				"expo",
+				"Out"
 			],
 			"time": 72332.3558162268,
 			"name": "Corruption Stage Gap Size"
@@ -812,10 +812,10 @@
 		},
 		{
 			"params": [
-				-75,
-				4,
-				"CLASSIC",
-				"In"
+				-100,
+				2,
+				"expo",
+				"Out"
 			],
 			"time": 72514.173998045,
 			"name": "Corruption Stage Gap Size"
@@ -830,10 +830,10 @@
 		},
 		{
 			"params": [
-				-150,
-				4,
-				"CLASSIC",
-				"In"
+				-200,
+				2,
+				"expo",
+				"Out"
 			],
 			"time": 72695.9921798632,
 			"name": "Corruption Stage Gap Size"
@@ -935,10 +935,10 @@
 		},
 		{
 			"params": [
-				0,
+				-50,
 				4,
-				"CLASSIC",
-				"In"
+				"expo",
+				"Out"
 			],
 			"time": 76695.9921798632,
 			"name": "Corruption Stage Gap Size"
@@ -963,10 +963,10 @@
 		},
 		{
 			"params": [
-				-50,
+				0,
 				4,
-				"CLASSIC",
-				"In"
+				"expo",
+				"Out"
 			],
 			"time": 77423.2649071359,
 			"name": "Corruption Stage Gap Size"
@@ -983,8 +983,8 @@
 			"params": [
 				100,
 				4,
-				"CLASSIC",
-				"In"
+				"expo",
+				"Out"
 			],
 			"time": 77786.9012707722,
 			"name": "Corruption Stage Gap Size"
@@ -1000,9 +1000,9 @@
 		{
 			"params": [
 				150,
-				4,
-				"CLASSIC",
-				"In"
+				2,
+				"expo",
+				"Out"
 			],
 			"time": 78150.5376344086,
 			"name": "Corruption Stage Gap Size"
@@ -1018,9 +1018,9 @@
 		{
 			"params": [
 				200,
-				4,
-				"CLASSIC",
-				"In"
+				2,
+				"expo",
+				"Out"
 			],
 			"time": 78332.3558162268,
 			"name": "Corruption Stage Gap Size"
@@ -1036,9 +1036,9 @@
 		{
 			"params": [
 				275,
-				4,
-				"CLASSIC",
-				"In"
+				2,
+				"expo",
+				"Out"
 			],
 			"time": 78514.173998045,
 			"name": "Corruption Stage Gap Size"
@@ -1085,17 +1085,6 @@
 			],
 			"time": 78877.8103616813,
 			"name": "Corruption Stage Gap Size"
-		},
-		{
-			"params": [
-				0,
-				true,
-				4,
-				"CLASSIC",
-				"In"
-			],
-			"time": 81786.9012707723,
-			"name": "Camera Movement"
 		},
 		{
 			"params": [
@@ -3717,9 +3706,12 @@
 			"name": "BPM Change"
 		}
 	],
+	"codenameChart": true,
 	"strumLines": [
 		{
 			"keyCount": 4,
+			"strumScale": 1,
+			"position": "dad",
 			"notes": [
 				{
 					"id": 2,
@@ -4425,7 +4417,7 @@
 				},
 				{
 					"id": 0,
-					"sLen": 272.999999999927,
+					"sLen": 272.999999999913,
 					"time": 71605.0830889541,
 					"type": 0
 				},
@@ -5019,7 +5011,7 @@
 				},
 				{
 					"id": 0,
-					"sLen": 688.000000000073,
+					"sLen": 688.000000000087,
 					"time": 99933.8760606882,
 					"type": 0
 				},
@@ -8234,22 +8226,21 @@
 					"type": 0
 				}
 			],
-			"position": "dad",
-			"strumScale": 1,
-			"visible": true,
-			"type": 0,
 			"characters": [
 				"exe"
 			],
+			"type": 0,
+			"visible": true,
 			"strumPos": [
 				0,
 				50
 			],
-			"strumLinePos": 0.25,
-			"vocalsSuffix": ""
+			"vocalsSuffix": "",
+			"strumLinePos": 0.25
 		},
 		{
 			"keyCount": 4,
+			"position": "boyfriend",
 			"notes": [
 				{
 					"id": 1,
@@ -11912,15 +11903,13 @@
 					"type": 0
 				}
 			],
-			"position": "boyfriend",
-			"type": 1,
+			"visible": true,
 			"characters": [
 				"bf"
 			],
-			"visible": true
+			"type": 1
 		}
 	],
-	"codenameChart": true,
 	"scrollSpeed": 3,
 	"chartVersion": "1.6.0",
 	"stage": "corruption",
