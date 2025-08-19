@@ -78,8 +78,6 @@ function onEvent(_e:EventGameEvent) {
 			var p = e.params;
 			var s = p[0];
 			var tt = p[1] == 0 ? 0.001 : p[1];
-
-			FlxTween.cancelTweensOf(sideSeparation);
 			
 			var isTween = p[2] != "CLASSIC";
 			if (isTween) {
