@@ -42,7 +42,7 @@ function postUpdate(elapsed:Float) {
 	hitboxL.x = CoolUtil.fpsLerp(hitboxL.x, targetRoomL, lerping ? 0.16 : 1);
 	hitboxR.x = CoolUtil.fpsLerp(hitboxR.x, targetRoomR, lerping ? 0.16 : 1);
 	
-	elapsedTimer += elapsed;
+	elapsedTimer += elapsed * (1 / (1 + shakeIntensity * 0.5));
 	var t = elapsedTimer / (2 - (0.08 * shakeIntensity));
 	var radius = 32 + (3.2*shakeIntensity);
 
