@@ -619,6 +619,16 @@
 		},
 		{
 			"params": [
+				2,
+				64,
+				"quart",
+				"Out"
+			],
+			"time": 45763.4408602151,
+			"name": "Corruption Stage Shake Intensity"
+		},
+		{
+			"params": [
 				1
 			],
 			"time": 51956.9892473119,
@@ -3707,12 +3717,9 @@
 			"name": "BPM Change"
 		}
 	],
-	"codenameChart": true,
 	"strumLines": [
 		{
 			"keyCount": 4,
-			"strumScale": 1,
-			"position": "dad",
 			"notes": [
 				{
 					"id": 2,
@@ -4418,7 +4425,7 @@
 				},
 				{
 					"id": 0,
-					"sLen": 272.999999999942,
+					"sLen": 272.999999999927,
 					"time": 71605.0830889541,
 					"type": 0
 				},
@@ -5012,7 +5019,7 @@
 				},
 				{
 					"id": 0,
-					"sLen": 688.000000000058,
+					"sLen": 688.000000000073,
 					"time": 99933.8760606882,
 					"type": 0
 				},
@@ -8227,21 +8234,22 @@
 					"type": 0
 				}
 			],
+			"position": "dad",
+			"strumScale": 1,
+			"visible": true,
+			"type": 0,
 			"characters": [
 				"exe"
 			],
-			"type": 0,
-			"visible": true,
 			"strumPos": [
 				0,
 				50
 			],
-			"vocalsSuffix": "",
-			"strumLinePos": 0.25
+			"strumLinePos": 0.25,
+			"vocalsSuffix": ""
 		},
 		{
 			"keyCount": 4,
-			"position": "boyfriend",
 			"notes": [
 				{
 					"id": 1,
@@ -11904,13 +11912,15 @@
 					"type": 0
 				}
 			],
-			"visible": true,
+			"position": "boyfriend",
+			"type": 1,
 			"characters": [
 				"bf"
 			],
-			"type": 1
+			"visible": true
 		}
 	],
+	"codenameChart": true,
 	"scrollSpeed": 3,
 	"chartVersion": "1.6.0",
 	"stage": "corruption",

@@ -5,7 +5,7 @@ import Sys;
 
 var roomsCentrePoint:FlxPoint;
 
-var moveSpeed:Float = 0.5,
+var shakeIntensity:Float = 0,
 	lerping:Bool = true,
 	sideSeparation:Float = 182;
 
@@ -53,6 +53,12 @@ function postUpdate(elapsed:Float) {
 
 	roomL.setPosition(xL, yL);
 	roomR.setPosition(xR, yR);
+
+	roomL.x = CoolUtil.fpsLerp(roomL.x, xL + FlxG.random.float(-2, 2)*shakeIntensity, 0.04*shakeIntensity);
+	roomL.y = CoolUtil.fpsLerp(roomL.y, yL + FlxG.random.float(-2, 2)*shakeIntensity, 0.04*shakeIntensity);
+	
+	roomR.x = CoolUtil.fpsLerp(roomR.x, xR + FlxG.random.float(-2, 2)*shakeIntensity, 0.04*shakeIntensity);
+	roomR.y = CoolUtil.fpsLerp(roomR.y, yR + FlxG.random.float(-2, 2)*shakeIntensity, 0.04*shakeIntensity);
 	
 	for (s=>arr in psmm) {
 		for (entry in arr) {
@@ -65,27 +71,40 @@ function postUpdate(elapsed:Float) {
 
 function onEvent(_e:EventGameEvent) {
 	var e = _e.event;
-	if (e.name != "Corruption Stage Gap Size") return;
-	
-	var p = e.params;
-	var s = p[0];
-	var tt = p[1] == 0 ? 0.001 : p[1];
+	switch e.name {
+		case "Corruption Stage Gap Size":
+			var p = e.params;
+			var s = p[0];
+			var tt = p[1] == 0 ? 0.001 : p[1];
 
-	FlxTween.cancelTweensOf(sideSeparation);
-	
-	var isTween = p[2] != "CLASSIC";
-	if (isTween) {
-		lerping = false;
-		var initialVal = sideSeparation;
-		var te = CoolUtil.flxeaseFromString(p[2], p[3]);
+			FlxTween.cancelTweensOf(sideSeparation);
+			
+			var isTween = p[2] != "CLASSIC";
+			if (isTween) {
+				lerping = false;
+				var initialVal = sideSeparation;
+				var te = CoolUtil.flxeaseFromString(p[2], p[3]);
 
-		FlxTween.num(initialVal, s, (Conductor.stepCrochet/1000) * tt, { ease: te, onComplete: ()->{
-			lerping = true;
-		}}, (v:Float)->{
-			sideSeparation = v;
-		});
-	} else {
-		lerping = true;
-		sideSeparation = e.params[0];
+				FlxTween.num(initialVal, s, (Conductor.stepCrochet/1000) * tt, { ease: te, onComplete: ()->{
+					lerping = true;
+				}}, (v:Float)->{
+					sideSeparation = v;
+				});
+			} else {
+				lerping = true;
+				sideSeparation = e.params[0];
+			}
+		case "Corruption Stage Shake Intensity":
+			var p = e.params;
+			var i = p[0];
+			var tt = p[1] == 0 ? 0.001 : p[1];
+			var te = flxeaseFromString(p[2], p[3]);
+
+			var initialVal = shakeIntensity;
+			FlxTween.num(initialVal, i, tt, { ease: te }, (v:Float)->{
+				shakeIntensity = v;
+			});
 	}
+	
+	
 }
