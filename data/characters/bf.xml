@@ -1,5 +1,5 @@
 <!DOCTYPE codename-engine-character>
-<character y="350" flipX="true" isPlayer="true" color="#24D2FF">
+<character y="350" flipX="true" camx="60" camy="40" isPlayer="true" color="#24D2FF">
 	<anim name="idle" anim="idle" fps="12"/>
 	<anim name="singUP" anim="up" x="-20" fps="12"/>
 	<anim name="singLEFT" anim="left" x="-5" y="-3" fps="12"/>
@@ -15,4 +15,5 @@
 	<anim name="singRIGHT-loop" anim="right" x="-60" y="3" fps="12" loop="true" indices="1"/>
 	<anim name="singDOWN-loop" anim="down" x="-22" y="-14" fps="12" loop="true" indices="1"/>
 	<anim name="hey" anim="HEY" x="-19" y="3" fps="12"/>
+	<anim name="hey-loop" anim="HEY" x="-19" y="3" loop="true" indices="1"/>
 </character>
