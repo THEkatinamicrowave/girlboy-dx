@@ -1,10 +1,10 @@
 {
-    "params": [
-        {
-            "name": "Gap Size (in pixels)",
-            "type": "Float(-9999, 9999, 0.01, 2)",
-            "defaultValue": "200"
-        },
+	"params": [
+		{
+			"name": "Gap Size (in pixels)",
+			"type": "Float(-9999, 9999, 0.01, 2)",
+			"defaultValue": "200"
+		},
 		{
 			"name": "Tween Time (Steps, IF NOT CLASSIC)",
 			"type": "Float(0, 9999, 0.01, 2)",
@@ -20,5 +20,5 @@
 			"type": "DropDown('In', 'Out', 'InOut')",
 			"defaultValue": "In"
 		}
-    ]
+	]
 }

@@ -1,10 +1,10 @@
 {
-    "params": [
-        {
-            "name": "Intensity (uhhhh in units (????))",
-            "type": "Float(0, 10, 0.01, 2)",
-            "defaultValue": "0"
-        },
+	"params": [
+		{
+			"name": "Intensity (uhhhh in units (????))",
+			"type": "Float(0, 10, 0.01, 2)",
+			"defaultValue": "0"
+		},
 		{
 			"name": "Tween Time (Steps)",
 			"type": "Float(0, 9999, 0.01, 2)",
@@ -20,5 +20,5 @@
 			"type": "DropDown('In', 'Out', 'InOut')",
 			"defaultValue": "In"
 		}
-    ]
+	]
 }
