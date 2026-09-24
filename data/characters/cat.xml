@@ -1,13 +1,8 @@
 <!DOCTYPE codename-engine-character>
-<character y="500" flipX="true" camx="10" camy="50" isPlayer="true" icon="cat" color="#313554">
-	<anim name="idle" anim="idle" fps="12"/>
-	<anim name="singUP" anim="up" x="-32" y="13" fps="12"/>
-	<anim name="singLEFT" anim="left" x="-8" y="-4" fps="12"/>
-	<anim name="singRIGHT" anim="right" x="-66" y="-3" fps="12"/>
-	<anim name="singDOWN" anim="down" x="-43" y="-19" fps="12"/>
-	<anim name="idle-loop" anim="idle" fps="12" loop="true" indices="4"/>
-	<anim name="singUP-loop" anim="up" x="-32" y="13" fps="12" loop="true" indices="1"/>
-	<anim name="singLEFT-loop" anim="left" x="-8" y="-4" fps="12" loop="true" indices="1"/>
-	<anim name="singRIGHT-loop" anim="right" x="-66" y="-3" fps="12" loop="true" indices="1"/>
-	<anim name="singDOWN-loop" anim="down" x="-43" y="-19" fps="12" loop="true" indices="1"/>
+<character x="200" y="700" flipX="true" camx="10" camy="50" isPlayer="true" icon="cat" color="#313554" applyStageMatrix="true">
+	<anim name="idle" anim="idle" label="true"/>
+	<anim name="singUP" anim="up" label="true" x="-25" y="9"/>
+	<anim name="singLEFT" anim="left" label="true" x="-6" y="1"/>
+	<anim name="singRIGHT" anim="right" label="true" x="-53" y="-5"/>
+	<anim name="singDOWN" anim="down" label="true" x="-32" y="-8"/>
 </character>
