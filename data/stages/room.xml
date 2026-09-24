@@ -3,7 +3,7 @@
 	<sprite x="697" scroll="1.1" sprite="outside" y="286" name="outside"/>
 	<sprite x="-891" sprite="bg" y="-548" name="bg"/>
 	<sprite x="-223" sprite="bed" y="655" name="bed"/>
-	<dad x="252" scroll="1.05" y="200"/>
-	<boyfriend x="752" scroll="1.05" y="200"/>
+	<dad y="200"/>
+	<boyfriend x="752" y="250"/>
 	<girlfriend/>
 </stage>
