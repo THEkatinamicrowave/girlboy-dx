@@ -1,6 +1,6 @@
 <!DOCTYPE codename-engine-stage>
 <stage folder="stages/building/" name="building" zoom="0.7">
-	<sprite x="-845" scroll="0.55" sprite="bg" y="-635" name="bg"/>
+	<sprite x="-845" scroll="0.1" sprite="bg" y="-635" name="bg"/>
 	<sprite x="-462" scroll="0.85" sprite="buildings" y="40" name="buildings"/>
 	<sprite x="-277" sprite="roof" y="527" name="roof"/>
 	<sprite x="-149" sprite="dx/roof_lights" y="1067" alpha="0" name="rooflights"/>
