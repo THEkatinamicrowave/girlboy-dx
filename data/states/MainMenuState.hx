@@ -20,3 +20,12 @@ function postUpdate(elapsed:Float) {
 		FlxG.switchState(new ModState("LoadingExe"));
 	}
 }
+
+function onSelectItem(event:NameEvent) {
+	switch(event.name) {
+		case 'wuffstudio':
+			selectedSomethin = false;
+			menuItems.members[curSelected].visible = true;
+			FlxG.openURL('https://discord.gg/BcwAfRcWGj');
+	}
+}

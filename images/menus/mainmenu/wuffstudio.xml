@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="wuffstudio.png">
+	<!-- Created with Adobe Animate version 21.0.6.41649 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="wuffstudio basic0000" x="0" y="0" width="745" height="160"/>
+	<SubTexture name="wuffstudio basic0001" x="0" y="0" width="745" height="160"/>
+	<SubTexture name="wuffstudio basic0002" x="0" y="0" width="745" height="160"/>
+	<SubTexture name="wuffstudio basic0003" x="749" y="0" width="745" height="160"/>
+	<SubTexture name="wuffstudio basic0004" x="749" y="0" width="745" height="160"/>
+	<SubTexture name="wuffstudio basic0005" x="749" y="0" width="745" height="160"/>
+	<SubTexture name="wuffstudio basic0006" x="0" y="164" width="745" height="160"/>
+	<SubTexture name="wuffstudio basic0007" x="0" y="164" width="745" height="160"/>
+	<SubTexture name="wuffstudio basic0008" x="0" y="164" width="745" height="160"/>
+	<SubTexture name="wuffstudio white0000" x="749" y="164" width="874" height="202" frameX="-1" frameY="-9" frameWidth="881" frameHeight="219"/>
+	<SubTexture name="wuffstudio white0001" x="0" y="370" width="881" height="202" frameX="0" frameY="-11" frameWidth="881" frameHeight="219"/>
+	<SubTexture name="wuffstudio white0002" x="885" y="370" width="869" height="219" frameX="-6" frameY="0" frameWidth="881" frameHeight="219"/>
+</TextureAtlas>
