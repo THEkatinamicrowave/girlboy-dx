@@ -87,6 +87,7 @@ function onEvent(_e:EventGameEvent) {
 	bigFuckinLight.alpha = rooflights.alpha * 0.6;
 	otherFuckinLight.alpha = rooflights.alpha * 0.45;
 	defaultCamZoom = toggle ? 0.45 : stage.stageXML.get("zoom");
+	dad.useRenderTexture = boyfriend.useRenderTexture = toggle;
 
 	for (shader in [p1shader, p2shader, bgBuildingsShader, fgBuildingsShader]) shader.mixValue = rooflights.alpha;
 }
