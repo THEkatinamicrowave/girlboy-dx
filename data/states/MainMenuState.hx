@@ -1,5 +1,6 @@
 //
 import flixel.input.keyboard.FlxKey;
+import funkin.backend.MusicBeatState;
 
 var codeString:String = "";
 final supportedCharList = [
@@ -25,6 +26,8 @@ function postUpdate(elapsed:Float) {
 
 	if (codeString.toLowerCase() == "runkillprgm.exe") {
 		persistentUpdate = false;
+		MusicBeatState.skipTransOut = true;
+
 		FlxG.sound.music.stop();
 		FlxG.switchState(new ModState("LoadingExe"));
 	}

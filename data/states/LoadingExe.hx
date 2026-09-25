@@ -1,4 +1,7 @@
 //
+import openfl.text.TextFormat;
+import funkin.backend.MusicBeatState;
+import funkin.backend.system.framerate.Framerate;
 
 var textShit:FunkinText;
 var curLine:Int = 0;
@@ -17,13 +20,19 @@ var lines:Array<{t:String, w:Float, c:Bool}> = [ // text, waittime, clear
 ];
 
 function create() {
+	Framerate.offset.set(0, -1280);
+	MusicBeatState.skipTransIn = true;
+
 	textShit = new FunkinText(5, 5, FlxG.width - 10, defaultHeader, 24);
+	textShit.font = "e"; // need the default font
 	add(textShit);
 	runTextLines();
 }
 
 function runTextLines() {
 	if (curLine >= lines.length) {
+		Framerate.offset.set(0, 0);
+
 		killText();
 		return;
 	}
@@ -37,7 +46,7 @@ function runTextLines() {
 	});
 }
 
-function killText() {
+function killText() {	
 	textShit.text = "";
 	new FlxTimer().start(1, ()->{
 		PlayState.loadSong("corruption");
