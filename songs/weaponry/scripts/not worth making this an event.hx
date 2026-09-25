@@ -10,5 +10,5 @@ function beatHit(beat:Int) {
 }
 
 function uiBadApple(doit:Bool) {
-    camHUD.color = doit ? 0xFF000000 : 0xFFFFFFFF;
+	camHUD.color = doit ? 0xFF000000 : 0xFFFFFFFF;
 }

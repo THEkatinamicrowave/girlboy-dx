@@ -16,9 +16,12 @@ function postCreate() {
 
 function postUpdate(elapsed:Float) {
 	var kInt = FlxG.keys.firstJustPressed();
-	if (kInt == -1 || !supportedCharList.exists(FlxKey.toStringMap.get(kInt))) return;
+	if (kInt == -1) return;
 
-	codeString += supportedCharList.get(FlxKey.toStringMap.get(kInt));
+	var keyName = FlxKey.toStringMap.get(kInt);
+	if (!supportedCharList.exists(keyName)) return;
+
+	codeString += supportedCharList.get(keyName);
 
 	if (codeString.toLowerCase() == "runkillprgm.exe") {
 		persistentUpdate = false;
