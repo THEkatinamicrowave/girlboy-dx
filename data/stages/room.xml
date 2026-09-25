@@ -1,9 +1,9 @@
 <!DOCTYPE codename-engine-stage>
-<stage folder="stages/room/" name="room" zoom="0.75">
-	<sprite x="697" scroll="1.1" sprite="outside" y="286" name="outside"/>
-	<sprite x="-891" sprite="bg" y="-548" name="bg"/>
-	<sprite x="-223" sprite="bed" y="655" name="bed"/>
+<stage name="room" folder="stages/room/" zoom="0.75">
+	<spr name="outside" sprite="outside" x="697" y="286" scroll="1.1"/>
+	<spr name="bg" sprite="bg" x="-891" y="-548"/>
+	<spr name="bed" sprite="bed" x="-223" y="655"/>
+
 	<dad y="200"/>
 	<boyfriend x="752" y="250"/>
-	<girlfriend/>
 </stage>

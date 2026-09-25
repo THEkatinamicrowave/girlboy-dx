@@ -6,7 +6,7 @@
 			"defaultValue": "200"
 		},
 		{
-			"name": "Tween Time (Steps, IF NOT CLASSIC)",
+			"name": "Tween Time (Steps; doesn't apply on \"CLASSIC\" tween ease)",
 			"type": "Float(0, 9999, 0.01, 2)",
 			"defaultValue": 4
 		},

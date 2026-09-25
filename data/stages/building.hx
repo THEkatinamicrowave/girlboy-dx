@@ -2,34 +2,18 @@
 var curColor:Int = 0;
 var colors = [0xFF31A2FD, 0xFF31FD8C, 0xFFFB33F5, 0xFFFD4531, 0xFFFBA633];
 
-var p1shader:CustomShader;
-var p2shader:CustomShader;
-var bgBuildingsShader:CustomShader;
-var fgBuildingsShader:CustomShader;
-
-var bigFuckinLight:FlxSprite;
-var otherFuckinLight:FlxSprite;
+var p1shader:FunkinShader;
+var p2shader:FunkinShader;
+var bgBuildingsShader:FunkinShader;
+var fgBuildingsShader:FunkinShader;
 
 function postCreate() {
-	if (stage.stageName != "building") return;
+	p1shader = FunkinShader.fromFile(Paths.fragShader("bullshit"));
+	p2shader = FunkinShader.fromFile(Paths.fragShader("bullshit"));
+	bgBuildingsShader = FunkinShader.fromFile(Paths.fragShader("bullshit"));
+	fgBuildingsShader = FunkinShader.fromFile(Paths.fragShader("bullshit"));
 
-	p1shader = new CustomShader("bullshit");
-	p2shader = new CustomShader("bullshit");
-	bgBuildingsShader = new CustomShader("bullshit");
-	fgBuildingsShader = new CustomShader("bullshit");
-
-	bigFuckinLight = new FlxSprite().loadGraphic(Paths.image("stages/building/dx/coollights"));
-	insert(members.indexOf(bg) + 1, bigFuckinLight);
-
-	otherFuckinLight = new FlxSprite().loadGraphic(Paths.image("stages/building/dx/coollights"));
-	insert(members.indexOf(bigFuckinLight), otherFuckinLight);
-
-	for (light in [bigFuckinLight, otherFuckinLight]) {
-		light.updateHitbox();
-		light.alpha = light.blend = 0;
-		light.scrollFactor.set();
-		light.screenCenter();
-	}
+	for (light in [bigFuckinLight, otherFuckinLight]) light.screenCenter();
 
 	otherFuckinLight.visible = !bigFuckinLight.visible;
 
@@ -47,11 +31,10 @@ function postCreate() {
 }
 
 function postUpdate(elapsed:Float) {
-	bigFuckinLight.angle += (Conductor.stepCrochet / 3) * elapsed;
-	otherFuckinLight.angle -= (Conductor.stepCrochet / 3) * elapsed;
-
-	for (light in [bigFuckinLight, otherFuckinLight])
-		light.scale.set(Math.sqrt(2) / camGame.zoom, Math.sqrt(2) / camGame.zoom); // diagonal square
+	var angleAmount:Float = (Conductor.stepCrochet * 0.333) * elapsed;
+	
+	bigFuckinLight.angle += angleAmount;
+	otherFuckinLight.angle -= angleAmount;
 }
 
 function beatHit(beat:Int) {
@@ -77,7 +60,7 @@ function beatHit(beat:Int) {
 
 function onEvent(_e:EventGameEvent) {
 	var e = _e.event;
-	if (e.name != "Start Buildings Goober Event") return;
+	if (_e.cancelled || e.name != "Start Buildings Goober Event") return;
 
 	var toggle:Bool = e.params[0];
 
@@ -86,7 +69,8 @@ function onEvent(_e:EventGameEvent) {
 	rooflights.alpha = toggle ? 1 : 0;
 	bigFuckinLight.alpha = rooflights.alpha * 0.6;
 	otherFuckinLight.alpha = rooflights.alpha * 0.45;
-	defaultCamZoom = toggle ? 0.45 : stage.stageXML.get("zoom");
+	defaultCamZoom = toggle ? 0.45 : defaultZoom;
+	
 	dad.useRenderTexture = boyfriend.useRenderTexture = toggle;
 
 	for (shader in [p1shader, p2shader, bgBuildingsShader, fgBuildingsShader]) shader.mixValue = rooflights.alpha;

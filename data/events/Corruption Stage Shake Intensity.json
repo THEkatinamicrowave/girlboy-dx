@@ -16,7 +16,7 @@
 			"defaultValue": "linear"
 		},
 		{
-			"name": "Tween Type (excluded if CLASSIC or linear, ex: InOut)",
+			"name": "Tween Type (ex: InOut)",
 			"type": "DropDown('In', 'Out', 'InOut')",
 			"defaultValue": "In"
 		}

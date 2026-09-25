@@ -1,10 +1,14 @@
 <!DOCTYPE codename-engine-stage>
-<stage folder="stages/building/" name="building" zoom="0.7">
-	<sprite x="-845" scroll="0.1" sprite="bg" y="-635" name="bg"/>
-	<sprite x="-462" scroll="0.85" sprite="buildings" y="40" name="buildings"/>
-	<sprite x="-277" sprite="roof" y="527" name="roof"/>
-	<sprite x="-149" sprite="dx/roof_lights" y="1067" alpha="0" name="rooflights"/>
+<stage name="building" folder="stages/building/" zoom="0.7">
+	<spr name="bg" sprite="bg" x="-845" y="-635" scroll="0.1"/>
+
+	<spr name="otherFuckinLight" sprite="dx/coollights" scroll="0" alpha="0" blend="add" scale="1.414" zoomfactor="0"/> <!-- 1.414 is like sqr(2) because hypotenuse or sm -->
+	<spr name="bigFuckinLight" sprite="dx/coollights" scroll="0" alpha="0" blend="add" scale="1.414" zoomfactor="0"/>
+
+	<spr name="buildings" sprite="buildings" x="-462" y="40" scroll="0.85"/>
+	<spr name="roof" sprite="roof" x="-277" y="527"/>
+	<spr name="rooflights" sprite="dx/roof_lights" x="-149" y="1067" alpha="0"/>
+
 	<boyfriend x="800" y="0"/>
 	<dad y="0"/>
-	<girlfriend/>
 </stage>
