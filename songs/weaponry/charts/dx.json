@@ -1062,7 +1062,9 @@
 				true,
 				4,
 				"CLASSIC",
-				"In"
+				"In",
+				0,
+				0
 			],
 			"name": "Camera Movement",
 			"time": 109714.285714286
