@@ -1,5 +1,5 @@
 <!DOCTYPE codename-engine-character>
-<character x="200" y="550" flipX="true" camx="60" camy="40" isPlayer="true" icon="bf" color="#24D2FF" applyStageMatrix="true">
+<character x="200" y="550" flipX="true" camx="60" camy="40" isPlayer="true" color="#24D2FF" applyStageMatrix="true">
 	<anim name="idle" anim="idle" label="true"/>
 	<anim name="singUP" anim="up" label="true" x="46" y="23"/>
 	<anim name="singLEFT" anim="left" label="true" x="52" y="11"/>
@@ -9,4 +9,5 @@
 	<anim name="singLEFTmiss" anim="MISS left" label="true" x="57" y="15"/>
 	<anim name="singRIGHTmiss" anim="MISS right" label="true" x="-21" y="5"/>
 	<anim name="singDOWNmiss" anim="MISS down" label="true" y="-1"/>
+	<anim name="hey" anim="hey" label="true" x="63" y="20"/>
 </character>
