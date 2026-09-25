@@ -76,13 +76,14 @@ function postUpdate(elapsed:Float) {
 	var shakeMult:Float = 0.07 * shakeIntensity;
 	var randX:Float = FlxG.random.float(-2, 2) * shakeIntensity;
 	var randY:Float = FlxG.random.float(-2, 2) * shakeIntensity;
+
 	roomL.setPosition(
-		CoolUtil.fpsLerp(roomL.x, xL + randX, shakeMult),
-		CoolUtil.fpsLerp(roomL.y, yL + randY, shakeMult)
+		CoolUtil.fpsLerp(xL, xL + randX, shakeMult),
+		CoolUtil.fpsLerp(yL, yL + randY, shakeMult)
 	);
 	roomR.setPosition(
-		CoolUtil.fpsLerp(roomR.x, xR + randX, shakeMult),
-		CoolUtil.fpsLerp(roomR.y, yR + randY, shakeMult)
+		CoolUtil.fpsLerp(xR, xR + randX, shakeMult),
+		CoolUtil.fpsLerp(yR, yR + randY, shakeMult)
 	);
 	
 	for (s => entry in psmm) {
