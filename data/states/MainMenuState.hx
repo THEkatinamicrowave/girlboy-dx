@@ -35,6 +35,7 @@ function onSelectItem(event:NameEvent) {
 		case 'wuffstudio':
 			selectedSomethin = false;
 			menuItems.members[curSelected].visible = true;
+
 			FlxG.openURL('https://discord.gg/BcwAfRcWGj');
 	}
 }
