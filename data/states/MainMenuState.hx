@@ -8,6 +8,12 @@ final supportedCharList = [
 	"PERIOD" => ".", "COMMA" => ",", "SEMICOLON" => ";", "QUOTE" => "'", "SLASH" => "/", "MINUS" => "-"
 ];
 
+function postCreate() {
+	for (i => item in menuItems.members) {
+		item.y = 30 + (i * 160);
+	}
+}
+
 function postUpdate(elapsed:Float) {
 	var kInt = FlxG.keys.firstJustPressed();
 	if (kInt == -1 || !supportedCharList.exists(FlxKey.toStringMap.get(kInt))) return;
