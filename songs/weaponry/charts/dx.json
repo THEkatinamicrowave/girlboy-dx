@@ -527,7 +527,7 @@
 		{
 			"params": [
 				true,
-				0.2,
+				0.3,
 				"camGame",
 				2,
 				"circ",
@@ -544,7 +544,9 @@
 				true,
 				4,
 				"CLASSIC",
-				"In"
+				"In",
+				0,
+				0
 			],
 			"name": "Camera Movement",
 			"time": 41142.8571428571
@@ -558,6 +560,20 @@
 		},
 		{
 			"params": [
+				true,
+				1,
+				"camGame",
+				8,
+				"expo",
+				"Out",
+				"stage",
+				false
+			],
+			"time": 41142.8571428571,
+			"name": "Camera Zoom"
+		},
+		{
+			"params": [
 				false,
 				-1,
 				8,
@@ -565,20 +581,6 @@
 			],
 			"time": 41142.8571428571,
 			"name": "Camera Flash"
-		},
-		{
-			"params": [
-				false,
-				1,
-				"camGame",
-				4,
-				"linear",
-				"In",
-				"stage",
-				false
-			],
-			"time": 41142.8571428571,
-			"name": "Camera Zoom"
 		},
 		{
 			"params": [
@@ -677,7 +679,9 @@
 				true,
 				4,
 				"CLASSIC",
-				"In"
+				"In",
+				0,
+				0
 			],
 			"name": "Camera Movement",
 			"time": 75428.5714285715
@@ -687,7 +691,7 @@
 				true,
 				1,
 				"camGame",
-				36,
+				46,
 				"cube",
 				"InOut",
 				"direct",
@@ -695,30 +699,6 @@
 			],
 			"time": 75428.5714285715,
 			"name": "Camera Zoom"
-		},
-		{
-			"params": [
-				0.3,
-				"camGame"
-			],
-			"time": 76285.7142857143,
-			"name": "Add Camera Zoom"
-		},
-		{
-			"params": [
-				0.3,
-				"camGame"
-			],
-			"name": "Add Camera Zoom",
-			"time": 78000
-		},
-		{
-			"params": [
-				0.3,
-				"camGame"
-			],
-			"time": 79714.2857142857,
-			"name": "Add Camera Zoom"
 		},
 		{
 			"params": [
@@ -1722,11 +1702,10 @@
 			"time": 237257.142857143
 		}
 	],
-	"codenameChart": true,
+	"stage": "room",
 	"strumLines": [
 		{
 			"keyCount": 4,
-			"position": "dad",
 			"notes": [
 				{
 					"id": 0,
@@ -4711,15 +4690,15 @@
 					"type": 0
 				}
 			],
+			"position": "dad",
+			"type": 0,
+			"visible": true,
 			"characters": [
 				"girlboy"
-			],
-			"visible": true,
-			"type": 0
+			]
 		},
 		{
 			"keyCount": 4,
-			"position": "boyfriend",
 			"notes": [
 				{
 					"id": 0,
@@ -7770,15 +7749,16 @@
 					"type": 0
 				}
 			],
+			"position": "boyfriend",
+			"type": 1,
+			"visible": true,
 			"characters": [
 				"bf"
-			],
-			"visible": true,
-			"type": 1
+			]
 		}
 	],
-	"stage": "room",
-	"scrollSpeed": 3,
 	"chartVersion": "1.6.0",
+	"scrollSpeed": 3,
+	"codenameChart": true,
 	"noteTypes": []
 }
