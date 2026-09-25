@@ -691,9 +691,9 @@
 				true,
 				1,
 				"camGame",
-				46,
+				48,
 				"cube",
-				"InOut",
+				"In",
 				"direct",
 				false
 			],
@@ -933,13 +933,28 @@
 		{
 			"params": [
 				0,
-				true,
-				2,
-				"circ",
-				"In"
+				false,
+				4,
+				"CLASSIC",
+				"In",
+				0,
+				0
 			],
 			"time": 82071.4285714286,
 			"name": "Camera Movement"
+		},
+		{
+			"params": [
+				620,
+				670,
+				true,
+				8,
+				"expo",
+				"Out",
+				false
+			],
+			"name": "Camera Position",
+			"time": 82285.7142857143
 		},
 		{
 			"params": [
@@ -971,6 +986,16 @@
 			],
 			"time": 82285.7142857143,
 			"name": "Camera Zoom"
+		},
+		{
+			"params": [
+				false,
+				-1,
+				8,
+				"camGame"
+			],
+			"time": 82285.7142857143,
+			"name": "Camera Flash"
 		},
 		{
 			"params": [
@@ -1702,10 +1727,10 @@
 			"time": 237257.142857143
 		}
 	],
-	"stage": "room",
 	"strumLines": [
 		{
 			"keyCount": 4,
+			"position": "dad",
 			"notes": [
 				{
 					"id": 0,
@@ -4690,15 +4715,15 @@
 					"type": 0
 				}
 			],
-			"position": "dad",
-			"type": 0,
-			"visible": true,
 			"characters": [
 				"girlboy"
-			]
+			],
+			"visible": true,
+			"type": 0
 		},
 		{
 			"keyCount": 4,
+			"position": "boyfriend",
 			"notes": [
 				{
 					"id": 0,
@@ -7749,14 +7774,14 @@
 					"type": 0
 				}
 			],
-			"position": "boyfriend",
-			"type": 1,
-			"visible": true,
 			"characters": [
 				"bf"
-			]
+			],
+			"visible": true,
+			"type": 1
 		}
 	],
+	"stage": "room",
 	"chartVersion": "1.6.0",
 	"scrollSpeed": 3,
 	"codenameChart": true,
