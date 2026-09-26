@@ -8,7 +8,7 @@
 	<SubTexture name="arrowUP0000" x="450" y="0" width="142" height="148"/>
 	<SubTexture name="blue0000" x="596" y="0" width="142" height="149"/>
 	<SubTexture name="blue hold end0000" x="742" y="0" width="68" height="81"/>
-	<SubTexture name="blue hold piece0000" x="814" y="0" width="51" height="87"/>
+	<SubTexture name="blue hold piece0000" x="814" y="0" width="51" height="86"/>
 	<SubTexture name="down confirm0000" x="869" y="0" width="156" height="164"/>
 	<SubTexture name="down confirm0001" x="1029" y="0" width="156" height="164"/>
 	<SubTexture name="down confirm0002" x="1189" y="0" width="156" height="164"/>
@@ -35,7 +35,7 @@
 	<SubTexture name="down press0003" x="1805" y="0" width="136" height="143"/>
 	<SubTexture name="green0000" x="0" y="168" width="142" height="148"/>
 	<SubTexture name="green hold end0000" x="146" y="168" width="68" height="81"/>
-	<SubTexture name="green hold piece0000" x="218" y="168" width="51" height="87"/>
+	<SubTexture name="green hold piece0000" x="218" y="168" width="51" height="86"/>
 	<SubTexture name="left confirm0000" x="273" y="168" width="161" height="153"/>
 	<SubTexture name="left confirm0001" x="438" y="168" width="161" height="153"/>
 	<SubTexture name="left confirm0002" x="603" y="168" width="161" height="153"/>
@@ -62,10 +62,10 @@
 	<SubTexture name="left press0003" x="1240" y="168" width="144" height="138"/>
 	<SubTexture name="pruple end hold0000" x="1388" y="168" width="68" height="81"/>
 	<SubTexture name="purple0000" x="1460" y="168" width="148" height="142"/>
-	<SubTexture name="purple hold piece0000" x="1612" y="168" width="51" height="87"/>
+	<SubTexture name="purple hold piece0000" x="1612" y="168" width="51" height="86"/>
 	<SubTexture name="red0000" x="1667" y="168" width="148" height="142"/>
 	<SubTexture name="red hold end0000" x="1819" y="168" width="68" height="81"/>
-	<SubTexture name="red hold piece0000" x="1891" y="168" width="51" height="87"/>
+	<SubTexture name="red hold piece0000" x="1891" y="168" width="51" height="86"/>
 	<SubTexture name="right confirm0000" x="0" y="325" width="171" height="163"/>
 	<SubTexture name="right confirm0001" x="175" y="325" width="171" height="163"/>
 	<SubTexture name="right confirm0002" x="350" y="325" width="171" height="163"/>
