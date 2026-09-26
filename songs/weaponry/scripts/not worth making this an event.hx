@@ -1,11 +1,13 @@
 // it is so not worth making a separate event for this thing it only happens once
 //
 function beatHit(beat:Int) {
-	switch (beat) {
-		case 256:
-			uiBadApple(true);
-		case 258:
-			uiBadApple(false);
+	if (PlayState.difficulty.toLowerCase() == 'dx') {
+		switch (beat) {
+			case 256:
+				uiBadApple(true);
+			case 258:
+				uiBadApple(false);
+		}
 	}
 }
 
