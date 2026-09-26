@@ -93,7 +93,7 @@ function onPlayerHit(event:NoteHitEvent) {
 	ratingTimer.start(1.0, ()->{ 
 		FlxTween.tween(rating, {'scale.x': 0, 'scale.y': 0, alpha: 0}, 0.25, {ease: FlxEase.quadOut});
 
-		for (num in comboScore) {
+		for (num in comboNumGroup.members) {
 			FlxTween.tween(num, {'scale.x': 0, 'scale.y': 0, alpha: 0}, 0.25, {ease: FlxEase.quadOut});
 		}
 	});
