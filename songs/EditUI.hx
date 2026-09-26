@@ -5,18 +5,17 @@ import funkin.game.PlayState.ComboRating;
 import flixel.text.FlxTextBorderStyle;
 import flixel.ui.FlxBar;
 import flixel.ui.FlxBar.FlxBarFillDirection;
-import flixel.tween.FlxTween;
+import flixel.group.FlxTypedGroup;
 
+public var ratingTimer = new FlxTimer();
 public var rating:FlxSprite;
+
 public var combo:Int;
+public var comboNumGroup:FlxTypedGroup<FlxSprite>;
 
 public var healthLerp:Float;
 
-public var ratingTimer = new FlxTimer();
-
 function create():Void {
-	combo = 0;
-
 	comboGroup.visible = false;
 }
 
@@ -24,13 +23,19 @@ function postCreate():Void {
 	for (icon in [iconP1, iconP2]) {
 		icon.bump = null;
 		icon.updateBump = null;
-		camHUD.downscroll ? icon.y += 15 : icon.y -= 15;
+		icon.y += camHUD.downscroll ? 15 : -15;
 	}
 
 	rating = new FlxSprite(600, 525);
 	rating.alpha = 0;
 	rating.camera = camHUD;
 	add(rating);
+	
+	combo = 0;
+
+	comboNumGroup = new FlxTypedGroup();
+	comboNumGroup.camera = camHUD;
+	add(comboNumGroup);
 }
 
 function postUpdate(elapsed:Float):Void {
@@ -41,8 +46,9 @@ function postUpdate(elapsed:Float):Void {
 function beatHit(curBeat:Int) {
 	for (icon in [iconP1, iconP2]) {
 		FlxTween.cancelTweensOf(icon);
+
 		icon.scale.set(1.2, 0.8);
-		FlxTween.tween(icon, {'scale.x': 1, 'scale.y': 1}, 0.45, {ease: FlxEase.quadOut});
+		FlxTween.tween(icon, {'scale.x': 1, 'scale.y': 1}, (Conductor.crochet * 0.001) * 0.75, {ease: FlxEase.quadOut});
 	}
 }
 
@@ -62,11 +68,16 @@ function onPlayerHit(event:NoteHitEvent) {
 	FlxTween.cancelTweensOf(rating);
 	FlxTween.tween(rating, {'scale.x': 0.45, 'scale.y': 0.45}, 0.2, {ease: FlxEase.quadIn});
 	
-	if (!event.note.isSustainNote) {
-		combo += 1;
-	}
-	var comboScore:Array<Int> = [];
+	combo += 1;
 
+	for (member in comboNumGroup.members) {
+		FlxTween.cancelTweensOf(member);
+		member.destroy();
+		member = null;
+	}
+	comboNumGroup.clear();
+
+	var comboScore:Array<Int> = [];
 	var separatedScore:String = Std.string(combo);
 	for (i in 0...separatedScore.length) {
 		var numScore:FunkinSprite = new FunkinSprite(0, rating.y + (camHUD.downscroll ? -30 : 70));
@@ -75,20 +86,8 @@ function onPlayerHit(event:NoteHitEvent) {
 		numScore.updateHitbox();
 		numScore.screenCenter(FlxAxes.X);
 		numScore.x += (12 + (i * 36) - (separatedScore.length * 20)) + 330;
-		numScore.ID = 555;
-		comboScore.push(numScore);
-	}
-	
-	for (obj in members) {
-		if (obj != null && obj.ID == 555) {
-			FlxTween.cancelTweensOf(obj);
-			obj.destroy();
-		}
-	}
-	for (num in comboScore) {
-		add(num);
-		num.camera = camHUD;
-		num.alpha = 0.8;
+		numScore.alpha = 0.8;
+		comboNumGroup.add(numScore);
 	}
 	
 	ratingTimer.start(1.0, ()->{ 
