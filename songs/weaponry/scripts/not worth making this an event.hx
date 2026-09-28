@@ -14,6 +14,6 @@ function onEvent(_e:EventGameEvent) {
 
 function uiBadApple(mix:Float) {
 	ci.color = 0xFFFFFF;
-	ci.lerpTo(0xFFFFFF, mix);
+	ci.lerpTo(0x000000, mix);
 	camHUD.color = ci.color;
 }
