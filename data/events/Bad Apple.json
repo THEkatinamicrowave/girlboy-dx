@@ -21,6 +21,11 @@
 			"defaultValue": 0
 		},
 		{
+			"name": "Back Alpha",
+			"type": "Float(0, 1, 0.01, 2)",
+			"defaultValue": 0
+		},
+		{
 			"name": "Dad Color",
 			"type": "ColorWheel",
 			"defaultValue": "#000000"
@@ -37,6 +42,11 @@
 		},
 		{
 			"name": "Stage Color",
+			"type": "ColorWheel",
+			"defaultValue": "#FFFFFF"
+		},
+		{
+			"name": "Back Color",
 			"type": "ColorWheel",
 			"defaultValue": "#FFFFFF"
 		},
