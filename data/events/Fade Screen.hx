@@ -6,6 +6,7 @@ function postCreate() {
 	screenBox = new FunkinSprite().makeSolid(FlxG.width, FlxG.height, 0xFFFFFFFF);
 	screenBox.scrollFactor.set();
 	screenBox.zoomFactor = 0;
+	screenBox.angleFactor = 0;
 	screenBox.camera = camHUD;
 
 	var firstEvent:Dynamic = null;
