@@ -1,12 +1,22 @@
 {
 	"params": [
 		{
-			"name": "Fade Alpha",
+			"name": "Starting Alpha",
+			"type": "Float(0, 9999, 0.001, 3)",
+			"defaultValue": 0
+		},
+		{
+			"name": "Target Alpha",
 			"type": "Float(0, 9999, 0.001, 3)",
 			"defaultValue": 1
 		},
 		{
-			"name": "Fade Color",
+			"name": "Starting Color",
+			"type": "ColorWheel",
+			"defaultValue": "#000000"
+		},
+		{
+			"name": "Target Color",
 			"type": "ColorWheel",
 			"defaultValue": "#000000"
 		},

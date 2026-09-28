@@ -1,7 +1,4 @@
 {
-	"customValues": {
-		"startAlpha": 1
-	},
 	"color": "#0C49B0",
 	"opponentModeAllowed": true,
 	"difficulties": [

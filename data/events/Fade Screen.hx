@@ -1,49 +1,62 @@
 //
 var screenBox:FunkinSprite;
-
-var startAlpha:Bool;
-var startColor:FlxColor;
-var startOlapping:Bool;
+var fadeTween:FlxTween;
 
 function postCreate() {
-	screenBox = new FunkinSprite(-FlxG.width, -FlxG.height).makeSolid(3*FlxG.width, 3*FlxG.height, 0xFFFFFFFF);
-	screenBox.cameras = [camHUD];
+	screenBox = new FunkinSprite().makeSolid(FlxG.width, FlxG.height, 0xFFFFFFFF);
+	screenBox.scrollFactor.set();
+	screenBox.zoomFactor = 0;
+	screenBox.camera = camHUD;
 
-	if (SONG.meta.customValues != null) {
-		screenBox.alpha = (SONG.meta.customValues.startAlpha != null) ? SONG.meta.customValues.startAlpha : 0;
-		screenBox.color = (SONG.meta.customValues.startColor != null) ? SONG.meta.customValues.startColor : 0xFF000000;
+	var firstEvent:Dynamic = null;
+	for (e in events) {
+		if (e.name != "Fade Screen") continue;
 
-		if (SONG.meta.customValues.startOlapping != null && SONG.meta.customValues.startOlapping == "true")
-			add(screenBox);
-		else 
-			insert(0, screenBox);
+		if (firstEvent == null || e.time < firstEvent.time) firstEvent = e;
 	}
+	if (firstEvent == null) return;
+
+	var p = firstEvent.params;
+	screenBox.alpha = p[0];
+	screenBox.color = p[2];
+
+	setFadeLayer(p[5]);
 }
 
 function onEvent(_e:EventGameEvent) {
 	var e = _e.event;
-	if (e.name != "Fade Screen") return;
+	if (e.name != "Fade Screen" || _e.cancelled) return;
 
-	var p = e.params,
-		a = p[0],
-		c = p[1],
-		d = p[2] == 0 ? 0.001 : p[2],
-		o = p[3],
-		te = p[4],
-		td = p[5];
+	var p:Array<Dynamic> = e.params;
+	var startAlpha:Float = p[0];
+	var targetAlpha:Float = p[1];
+	var startColor:FlxColor = p[2];
+	var targetColor:FlxColor = p[3];
+	var rawTime:Float = p[4] == 0 ? 0.001 : p[4];
+	var olapsHUD:Bool = p[5];
+	var rawEase:String = p[6];
+	var rawType:String = p[7];
 
-	fadeScreen(a, c, d, o, CoolUtil.flxeaseFromString(te, td));
+	var time:Float = rawTime == 0 ? 0.001 : rawTime * (Conductor.stepCrochet * 0.001);
+	var ease:FlxEase = CoolUtil.flxeaseFromString(rawEase, rawType);
+
+	fadeScreen(startAlpha, targetAlpha, startColor, targetColor, time, olapsHUD, ease);
 }
 
-function fadeScreen(alpha:Float, color:FlxColor, duration:Float, overlapping:Bool, tweenEase:FlxEase) {
-	var firstColor:FlxColor = screenBox.color;
-	var firstAlpha:Float = screenBox.alpha;
+function fadeScreen(startAlpha:Float, targetAlpha:Float, startColor:FlxColor, targetColor:FlxColor, duration:Float, overlapsHUD:Bool, tweenEase:FlxEase) {
+	if (fadeTween != null) fadeTween.cancel();
+	setFadeLayer(overlapsHUD);
 
-	remove(screenBox);
-	if (overlapping) add(screenBox); else insert(0, screenBox);
+	screenBox.alpha = startAlpha;
+	screenBox.color = startColor;
 
-	FlxTween.color(screenBox, (Conductor.stepCrochet/1000) * duration, firstColor, color, { ease: tweenEase });
-	FlxTween.num(firstAlpha, alpha, (Conductor.stepCrochet/1000) * duration, { ease: tweenEase }, (v:Float) -> {
-		screenBox.alpha = v;
+	fadeTween = FlxTween.num(0, 1, duration, { ease: tweenEase }, (progress:Float) -> {
+		screenBox.alpha = startAlpha + (targetAlpha - startAlpha) * progress;
+		screenBox.color = FlxColor.interpolate(startColor, targetColor, progress);
 	});
+}
+
+function setFadeLayer(overlapsHUD:Bool) {
+	remove(screenBox);
+	if (overlapsHUD) add(screenBox); else insert(0, screenBox);
 }
